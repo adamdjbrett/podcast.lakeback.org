@@ -1,0 +1,11 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "podcast-lakeback-org",
+  "compatibility_date": "2026-11-21",
+  "build": { "command": "npm run build" },
+  "assets": { "directory": "./dist" },
+  "workers_dev": false,
+  "routes": [
+    { "pattern": "podcast.lakeback.org", "custom_domain": true }
+  ]
+}

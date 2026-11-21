@@ -7,3 +7,9 @@ Run `npm install`, then `npm run dev`. Open [http://localhost:8080](http://local
 Edit homepage content and launch settings in `src/_data/metadata.yml`. Use an ISO timestamp with an explicit UTC offset for `launch.at`. The build formats the displayed schedule in `launch.zone`. The schedule also works with JavaScript disabled.
 
 Cover artwork by Victoria Dickerson, from the podcast project, licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Red Hat Display is distributed under the SIL Open Font License, included in `src/assets/OFL.txt`.
+
+## Deploy to Cloudflare
+
+Run `npm run deploy -- --dry-run` to build the site and check the Wrangler configuration locally.
+
+To publish, authenticate with `npx wrangler login` using the Cloudflare account that manages the active `lakeback.org` zone. Run `npm run deploy` to build and serve `dist/` at `podcast.lakeback.org`. The custom domain is configured in `wrangler.jsonc`. Deployment runs directly from the local checkout, independently of GitHub.

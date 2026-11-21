@@ -156,3 +156,8 @@ vite.config.ts.timestamp-*
 .nx/cache
 .nx/workspace-data
 .nx/migrate-runs
+
+# Local Wrangler state and credentials
+.wrangler/
+.dev.vars
+.dev.vars.*

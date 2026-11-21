@@ -5,10 +5,14 @@
   "scripts": {
     "build": "buildawesome",
     "dev": "buildawesome --serve --port=8080",
+    "deploy": "wrangler deploy",
     "test": "node --test"
   },
   "dependencies": {
     "@awesome.me/buildawesome": "4.0.0-alpha.12",
     "js-yaml": "5.5.0"
+  },
+  "devDependencies": {
+    "wrangler": "4.166.0"
   }
 }
