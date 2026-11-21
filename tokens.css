@@ -1,0 +1,14 @@
+:root {
+  color-scheme: dark;
+  --color-paper: #121916;
+  --color-panel: #1c2520;
+  --color-display: #101510;
+  --color-ink: #f2f2e8;
+  --color-muted: #b2beb4;
+  --color-rule: #4d5850;
+  --color-accent: #ffbd55;
+  --color-route: #9cd9b9;
+  --font-display: "Red Hat Display", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, "SFMono-Regular", Consolas, monospace;
+}

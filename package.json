@@ -1,0 +1,14 @@
+{
+  "name": "podcast-lakeback-org",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "buildawesome",
+    "dev": "buildawesome --serve --port=8080",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "@awesome.me/buildawesome": "4.0.0-alpha.12",
+    "js-yaml": "5.5.0"
+  }
+}
