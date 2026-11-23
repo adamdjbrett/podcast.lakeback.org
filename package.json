@@ -28,7 +28,6 @@
     "markdown-it-anchor": "^9.2.0",
     "markdown-it-attrs": "^5.0.0",
     "pagefind": "1.6.0",
-    "prettier-plugin-jinja-template": "^2.2.0",
     "slugify": "^1.6.9",
     "wrangler": "4.166.0"
   },

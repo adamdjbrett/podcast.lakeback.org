@@ -67,6 +67,7 @@ Notable changes to the Healing the Sacred site. The format follows [Keep a Chang
 - Tailwind and the JSON design tokens: `src/_data/designTokens/`, `src/_config/tailwind.config.js` and `src/_config/utils/` (the unused 50 token variables and 9 utilities went with them).
 - `@11ty/eleventy-img`, its HTML transform, `src/_config/events/build-images.js` and the Markdown image renderer. Builds no longer write the unused `cover-3000.webp` and `apple-touch-icon.webp`. Unused source art and the image originals (about 28 MB, including `lake-band-v1.webp`) moved out of the repo to `../podcast.lakeback.org-source-art/`.
 - 162 npm packages, including tailwindcss, postcss-js, postcss, postcss-import, postcss-import-ext-glob, autoprefixer, cssnano, svgo, dayjs, fast-glob, rimraf, cross-env, markdown-it-link-attributes and `@awesome.me/buildawesome`.
+- `.prettierrc`, `.prettierignore` and `prettier-plugin-jinja-template` (with prettier, 11 MB): no script ran them and VS Code has no Prettier extension.
 - Eight unused Phosphor icons (arrow-square-out, butterfly, envelope, github-logo, instagram-logo, linkedin-logo, x-logo, youtube-logo).
 - `netlify.toml` (deploys go through Cloudflare via wrangler), `tests/` and the `test` script, `.env`, `.env.example` and `intros-outros.md`.
 - Dead CSS (`.indicator`, grid `data-rows`/`data-layout` variants, `.repel[data-nowrap]`, `.sidebar[data-direction='rtl']`, `.prose mark` and `pre` rules), Eleventy layout aliases, the sitemap's `lastUpdated`/`changeFreq` branches, and the unused `authors` value in `course.11tydata.js`.
