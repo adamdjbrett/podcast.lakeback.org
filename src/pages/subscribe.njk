@@ -1,0 +1,28 @@
+---
+title: Subscribe
+---
+
+<p class="lead">{{ labels.subscribe.lead }}</p>
+<div class="sheet index">
+  <div class="sub-row">
+    <label for="feed-url">{{ labels.subscribe.address }}</label>
+    <div class="sub-field | cluster gutter-s">
+      <input class="num" id="feed-url" type="text" readonly value="{{ meta.url }}{{ meta.podcast.feed }}" />
+      <button class="button" data-ghost-button type="button" data-copy="feed-url" data-copied="{{ labels.copy.done }}" hidden>{{ labels.copy.idle }}</button>
+      <p id="copy-status" class="visually-hidden" role="status" aria-atomic="true" data-error="{{ labels.copy.error }}"></p>
+    </div>
+  </div>
+</div>
+
+<h2>{{ labels.subscribe.apps }}</h2>
+<ul class="sheet index index__rows" role="list">
+  <li><a class="index__row no-indicator" href="{{ meta.podcast.buzzsprout.feed }}">{% svg "phosphor/rss", "", "index__icon" %}<span class="index__title">{{ labels.subscribe.hosted }}</span><span class="num">{{ meta.podcast.buzzsprout.feed | host }}</span></a></li>
+  {% include "partials/directory-rows.njk" %}
+</ul>
+
+<h2>{{ labels.subscribe.other }}</h2>
+<ul class="sheet index index__rows" role="list">
+  {% for feed in meta.feeds %}
+    <li><a class="index__row" href="{{ feed.url }}"><span><span class="index__title">{{ feed.title }}</span> <span class="index__meta">{{ feed.note }}</span></span><span class="num">{{ feed.url }}</span></a></li>
+  {% endfor %}
+</ul>

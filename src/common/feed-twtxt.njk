@@ -1,0 +1,10 @@
+---
+permalink: /feed/twtxt.txt
+---
+# nick        = {{ meta.siteName | slugify }}
+# url         = {{ meta.url }}{{ page.url }}
+# link        = {{ meta.siteName }} {{ meta.url }}/
+# description = {{ meta.siteSubtitle | safe }}
+{% for e in collections.episodes -%}
+{{ e.date | toIsoString }}	{{ e.data.title | safe }} {{ meta.url }}{{ e.url }}
+{% endfor %}

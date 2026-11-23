@@ -1,0 +1,13 @@
+<ol class="h-feed index__rows" role="list">
+  {% for ep in collections.episodes %}
+    <li class="h-entry">
+      <a class="u-url u-uid index__row" href="{{ meta.url }}{{ ep.url }}">
+        <span class="num">{{ ep.data.episode }}</span>
+        <span class="p-name index__title">{{ ep.data.title }}</span>
+        <time class="dt-published index__meta" datetime="{{ ep.date | isoDate }}">{{ ep.date | readableDate }}</time>
+        <span class="num">{{ ep.data.duration }}</span>
+      </a>
+      <a class="p-author h-card" rel="author" href="{{ meta.author.website }}" hidden>{{ meta.author.name }}</a>
+    </li>
+  {% endfor %}
+</ol>

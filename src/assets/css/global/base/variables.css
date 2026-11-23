@@ -1,0 +1,60 @@
+/* Global variables.
+   The structure is eleventy-excellent's and the brand trio is aila.ngo's (purple, teal, yellow).
+   The surfaces are the lake: teal stock taken from the podcast's cover painting. */
+
+:root {
+  --gutter: var(--space-m-l);
+  --wrapper-width: 85rem;
+  --tracking: -0.04ch;
+  --tracking-s: -0.075ch;
+  --tracking-wide: 0.04ch;
+  --stroke: 1px solid var(--color-rule);
+  --border-thickness: 2px;
+  --radius-sheet: 1.25rem;
+
+  /* A ripple edge, used as a mask along the top or bottom of the lake bands. */
+  --wave-up: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 24' preserveAspectRatio='none'%3E%3Cpath d='M0 12Q60 -6 120 12T240 12V24H0Z'/%3E%3C/svg%3E");
+  --wave-down: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 24' preserveAspectRatio='none'%3E%3Cpath d='M0 12Q60 -6 120 12T240 12V0H0Z'/%3E%3C/svg%3E");
+  --wave-size: 240px 24px;
+
+  --color-light: var(--color-gray-100);
+  --color-dark: var(--color-gray-900);
+
+  /* ponytail: one light-dark() per token instead of the starter's three copies of every theme block.
+     Needs a 2024 browser; older ones would need the duplicated :root / media / [data-theme] blocks back. */
+  color-scheme: light dark;
+
+  /* The lake, light: seen from the surface. Dark: the same lake from deeper down. */
+  --color-paper: light-dark(oklch(87% 0.03 200), oklch(21% 0.035 210));
+  --color-paper-2: light-dark(oklch(83% 0.034 200), oklch(25% 0.038 208));
+  --color-sheet: light-dark(oklch(95.5% 0.012 200), oklch(27% 0.038 208));
+  --color-ink: light-dark(oklch(19% 0.035 215), oklch(94% 0.018 200));
+  --color-ink-2: light-dark(oklch(26% 0.035 212), oklch(87% 0.024 200));
+  --color-quiet: light-dark(oklch(38% 0.035 208), oklch(74% 0.03 202));
+  --color-rule: light-dark(oklch(72% 0.035 200), oklch(36% 0.038 206));
+  --color-rule-2: light-dark(oklch(34% 0.04 208), oklch(64% 0.035 202));
+  --color-lake: light-dark(oklch(30% 0.05 205), oklch(14% 0.03 212));
+  --color-lake-2: light-dark(oklch(26% 0.045 208), oklch(18% 0.032 210));
+  --color-on-lake: light-dark(oklch(87% 0.03 200), oklch(94% 0.018 200));
+  --color-on-lake-2: light-dark(oklch(78% 0.038 200), oklch(80% 0.028 202));
+
+  /* eleventy-excellent's semantic names, as aila.ngo uses them */
+  --color-text: var(--color-ink);
+  --color-bg: var(--color-paper);
+  --color-text-accent: var(--color-quiet);
+  --color-bg-accent: var(--color-paper-2);
+  --color-bg-accent-2: var(--color-rule);
+  /* the ochre of the cover's lettering, the same in both themes; aila.ngo's purple stays available as --color-purple */
+  --color-primary: oklch(72% 0.13 75);
+  --color-on-primary: oklch(19% 0.035 215);
+  --color-secondary: light-dark(var(--color-teal), var(--color-teal-subdued));
+  --color-tertiary: light-dark(var(--color-yellow), var(--color-yellow-subdued));
+}
+
+/* The theme switch in the footer sets data-theme; without it the system setting decides. */
+:root[data-theme='light'] {
+  color-scheme: light;
+}
+:root[data-theme='dark'] {
+  color-scheme: dark;
+}

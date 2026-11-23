@@ -1,0 +1,34 @@
+/* The lake bands: deep teal with a ripple edge cut by a mask. */
+.lake {
+  --color-text: var(--color-on-lake);
+  --color-quiet: var(--color-on-lake-2);
+  --color-rule: var(--color-rule-2);
+  --color-paper-2: var(--color-lake-2);
+  --region-space-top: var(--space-2xl);
+  --region-space-bottom: var(--space-xl-2xl);
+  background: var(--color-lake);
+  color: var(--color-on-lake);
+  mask:
+    var(--wave-up) top / var(--wave-size) repeat-x,
+    linear-gradient(#000, #000) bottom / 100% calc(100% - 23px) no-repeat;
+}
+
+.lake .index__rows {
+  border-block-start: 2px solid var(--color-on-lake);
+}
+
+/* The full-bleed detail of the cover painting, rippled along both edges. */
+.lake-band {
+  display: block;
+  inline-size: 100%;
+  block-size: clamp(14rem, 32vw, 35rem);
+  object-fit: cover;
+  mask:
+    var(--wave-up) top / var(--wave-size) repeat-x,
+    var(--wave-down) bottom / var(--wave-size) repeat-x,
+    linear-gradient(#000, #000) center / 100% calc(100% - 46px) no-repeat;
+}
+
+picture:has(> .lake-band) {
+  display: block;
+}

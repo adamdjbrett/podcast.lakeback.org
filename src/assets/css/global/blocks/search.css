@@ -1,0 +1,18 @@
+/* Pagefind's default UI, dressed in the site's tokens. */
+#search {
+  --pagefind-ui-scale: 1;
+  --pagefind-ui-primary: var(--color-text);
+  --pagefind-ui-text: var(--color-text);
+  --pagefind-ui-background: var(--color-sheet);
+  --pagefind-ui-border: var(--color-rule-2);
+  --pagefind-ui-tag: var(--color-paper-2);
+  --pagefind-ui-border-width: 1px;
+  --pagefind-ui-border-radius: var(--radius-sheet);
+  --pagefind-ui-font: var(--font-base);
+  min-block-size: 4rem; /* holds the space before the script runs */
+}
+
+#search .pagefind-ui__search-input::placeholder {
+  color: var(--color-quiet);
+  opacity: 1;
+}

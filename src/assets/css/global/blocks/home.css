@@ -1,0 +1,118 @@
+/* Home: the headline and episode index beside the square cover. */
+.hero {
+  --region-space-top: var(--space-l-xl);
+}
+
+.hero__grid {
+  display: grid;
+  min-inline-size: 0;
+  gap: var(--space-l-xl);
+  grid-template-areas: 'head' 'cover' 'index';
+}
+
+.hero__head {
+  grid-area: head;
+  --flow-space: var(--space-m);
+}
+
+.hero__cover {
+  grid-area: cover;
+}
+
+.hero__cover img {
+  inline-size: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: var(--radius-sheet);
+  border: 1px solid var(--color-rule-2);
+}
+
+.hero__index {
+  grid-area: index;
+  min-inline-size: 0;
+}
+
+@media (min-width: 1000px) {
+  .hero__grid {
+    grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+    grid-template-rows: minmax(0, 1fr) auto;
+    grid-template-areas: 'head cover' 'index cover';
+    column-gap: var(--space-xl-2xl);
+  }
+  .hero__head,
+  .hero__index {
+    align-self: end;
+  }
+}
+
+/* The letter: heading beside the body, at a reading measure. */
+.letter {
+  --region-space: var(--space-2xl);
+  --sidebar-target-width: 22rem;
+  --sidebar-content-min-width: 55%;
+}
+
+.letter h2 {
+  max-inline-size: 14ch;
+}
+
+.letter__body p {
+  max-inline-size: 50ch;
+  font-size: var(--size-step-1);
+}
+
+.letter__body .letter__signoff {
+  font-size: var(--size-step-0);
+  font-weight: var(--font-bold);
+}
+
+.record {
+  --region-space-top: var(--space-2xl);
+}
+
+.record .index__head h2,
+.related h2 {
+  font-size: var(--size-step-4);
+}
+
+.related {
+  --region-space-bottom: var(--space-2xl);
+}
+
+/* A horizontal run past the wrapper's right edge; starts on its left edge. */
+.rail {
+  --rail-inset: max(clamp(1rem, 6vw, 3rem), calc((100% - 85rem) / 2));
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(16rem, min(30rem, 78%));
+  gap: var(--space-l);
+  margin: var(--space-l-xl) 0 0;
+  padding: 0 var(--rail-inset) var(--space-m);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: var(--rail-inset);
+  overscroll-behavior-x: contain;
+}
+
+.rail__item {
+  --flow-space: var(--space-s);
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  padding-block-start: var(--space-m);
+  border-block-start: 2px solid var(--color-rule-2);
+}
+
+.rail__item h3 {
+  font-size: var(--size-step-1);
+}
+
+.rail__meta {
+  margin-block-start: auto;
+  padding-block-start: var(--space-m);
+}
+
+.lake.region {
+  --sidebar-target-width: 22rem;
+  --sidebar-content-min-width: 55%;
+}

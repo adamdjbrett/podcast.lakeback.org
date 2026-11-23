@@ -1,0 +1,18 @@
+---js
+{
+  // One file per published episode or curriculum guide per citation format.
+  pagination: {
+    data: 'collections.episodes',
+    size: 1,
+    alias: 'item',
+    before: (episodes, data) => [
+      ...episodes.flatMap(ep => data.meta.citations.formats.map(format => ({ep, slug: ep.fileSlug, ext: format.ext}))),
+      ...(data.meta.curriculumGuide.published || process.env.ELEVENTY_ENV !== 'production'
+        ? data.meta.citations.formats.map(format => ({guide: data.guideCitation, slug: data.guideCitation.id, ext: format.ext}))
+        : [])
+    ]
+  },
+  permalink: '{{ meta.citations.path }}{{ item.slug }}.{{ item.ext }}'
+}
+---
+{% if item.guide %}{{ item.guide | citeGuide(meta, item.ext) | safe }}{% else %}{{ item.ep | cite(meta, item.ext) | safe }}{% endif %}

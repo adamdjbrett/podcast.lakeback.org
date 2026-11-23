@@ -1,0 +1,62 @@
+/* A publisher banner that scrolls away, over a frosted bar that stays. */
+.site-banner {
+  background: var(--color-lake);
+  color: var(--color-on-lake);
+  font-size: var(--size-step-min-1);
+  padding-block: var(--space-xs);
+}
+
+.site-header {
+  position: sticky;
+  inset-block-start: 0;
+  z-index: 10;
+  background: color-mix(in oklab, var(--color-sheet) 80%, transparent);
+  backdrop-filter: blur(12px);
+  border-block-end: var(--stroke);
+}
+
+.logo {
+  --gutter: var(--space-s);
+  padding: var(--space-xs) 0;
+  text-decoration: none;
+}
+
+.logo img {
+  inline-size: clamp(2.5rem, 6vw, 4.5rem);
+}
+
+.logo__label {
+  font-size: var(--size-step-min-1);
+  white-space: nowrap;
+}
+
+.mainnav ul {
+  --gutter: var(--space-xs);
+  margin: 0;
+  padding-block-end: var(--space-xs);
+}
+
+@media (min-width: 662px) {
+  .mainnav ul {
+    --gutter: var(--space-s);
+    padding-block-end: 0;
+  }
+}
+
+/* aila.ngo's nav links: a thick underline that takes the primary colour on the current page */
+.mainnav a:not(.button) {
+  display: inline-flex;
+  padding: var(--space-xs) var(--space-2xs);
+  text-decoration-line: underline;
+  text-decoration-color: transparent;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 0.2em;
+}
+
+.mainnav a:not(.button):hover {
+  text-decoration-color: var(--color-bg-accent-2);
+}
+
+.mainnav a[aria-current='page']:not(.button) {
+  text-decoration-color: var(--color-text);
+}

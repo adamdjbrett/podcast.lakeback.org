@@ -1,0 +1,54 @@
+{
+  "hero": {
+    "headline": "Healing the Sacred",
+    "sentence": "Restoring Onondaga Lake through Story, Ceremony, and Public Scholarship",
+    "primaryAction": "Listen",
+    "secondaryAction": "Subscribe",
+    "coverAlt": "Healing the Sacred: Restoring Onondaga Lake through Story, Ceremony, and Public Scholarship, lettered in ochre gold over native fish and an eel swimming through teal water above a lakebed littered with a barrel, a tire, a plastic bottle and a plastic bag."
+  },
+  "letter": {
+    "heading": "Why we made this podcast",
+    "paragraphs": [
+      "Onondaga Lake is the sacred site where Gayanashagowa, the Great Law of Peace, was established. The Onondaga Nation, one of six nations of the Haudenosaunee Confederacy, is petitioning the Organization of American States for land rights to the lake. Industrial pollution has desecrated it.",
+      "This podcast brings together story, ceremony, and public scholarship. Listeners will hear about the history of the lake, its significance to the Haudenosaunee Confederacy, the consequences of its pollution, and the work of restoring it.",
+      "We hold that returning Onondaga Lake to the Onondaga Nation is a vital step toward restoring this sacred place and toward healing for its people, the surrounding communities, and the natural world."
+    ],
+    "signoff": "American Indian Law Alliance",
+    "imageAlt": "A detail of the cover painting: fish and an eel swimming through the teal water of Onondaga Lake."
+  },
+  "episodes": {
+    "heading": "Episodes",
+    "emptyState": "Episodes are in production and none are published yet. Subscribe, and the first episode will reach you when it is released."  },
+  "related": {
+    "heading": "Related reading and listening",
+    "items": [
+      {
+        "title": "Healing the Sacred: The Fight to Restore Onondaga Lake and Honor Indigenous Land",
+        "kind": "Article",
+        "url": "https://commons.lib.jmu.edu/ijr/vol9/iss1/2/",
+        "note": "Published in the International Journal on Responsibility. This podcast shares its name."
+      },
+      {
+        "title": "LakeBack",
+        "kind": "Campaign",
+        "url": "https://lakeback.org",
+        "note": "The campaign to return Maple Bay on Onondaga Lake."
+      },
+      {
+        "title": "American Indian Law Alliance",
+        "kind": "Homepage",
+        "url": "https://aila.ngo/",
+        "note": "The American Indian Law Alliance is a non-profit organization that works with Indigenous Nations and peoples in the Americas to protect their sovereignty, human rights, and Mother Earth."
+      }
+    ]
+  },
+  "subscribe": {
+    "heading": "Subscribe to the podcast",
+    "sentence": "Subscribe to receive each episode when it is released.",
+    "featured": ["apple-podcasts", "spotify", "overcast", "podcast-addict", "listen-notes"],
+    "more": "All {n} apps, plus the RSS feed"
+  },
+  "footer": {
+    "colophon": "Healing the Sacred is published by the American Indian Law Alliance. Artwork by Victoria Dickerson."
+  }
+}

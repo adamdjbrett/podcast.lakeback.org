@@ -1,0 +1,154 @@
+/* The sheet: pale and round-cornered, like light on the surface. Lists sit on it. */
+.sheet {
+  background: var(--color-sheet);
+  border: var(--stroke);
+  border-radius: var(--radius-sheet);
+  padding: var(--space-m) var(--space-m-l);
+}
+
+.badge {
+  display: inline-block;
+  padding: var(--space-3xs) var(--space-s);
+  border: 1px solid var(--color-rule-2);
+  border-radius: var(--border-radius-full);
+  font-size: var(--size-step-min-1);
+  line-height: var(--leading-fine);
+}
+
+/* An index: a ruled head over rows that link. Episodes, and the ways to follow the show. */
+.index__head {
+  --repel-vertical-alignment: baseline;
+  padding-block-end: var(--space-s);
+  border-block-end: 2px solid var(--color-rule-2);
+}
+
+.index__head h2 {
+  font-size: var(--size-step-2);
+}
+
+.index__rows {
+  margin: 0;
+}
+
+/* rows run the width of the sheet, inside prose too */
+.index__rows > li {
+  max-inline-size: none;
+}
+
+.index__rows > li + li {
+  border-block-start: var(--stroke);
+}
+
+.index__row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: baseline;
+  column-gap: var(--space-m);
+  padding: var(--space-s) var(--space-2xs);
+  text-decoration: none;
+}
+
+.index__row:has(> :nth-child(3)) {
+  grid-template-columns: 3ch minmax(0, 1fr) auto;
+}
+
+.index__row:has(> :nth-child(4)) {
+  grid-template-columns: 3ch minmax(0, 1fr) auto 9ch;
+}
+
+.index__row:hover {
+  background: var(--color-paper-2);
+}
+
+.index__row:hover .index__title {
+  text-decoration: underline;
+  text-decoration-color: var(--color-primary);
+  text-decoration-thickness: 3px;
+  text-underline-offset: 0.2em;
+}
+
+/* App icon in the first column of a follow row (/subscribe/, home) */
+.index__row:has(> .index__icon) {
+  align-items: center;
+}
+
+.index__icon {
+  inline-size: 24px;
+  block-size: 24px;
+}
+
+.index__title {
+  font-weight: var(--font-bold);
+  overflow-wrap: break-word;
+}
+
+.index__meta {
+  font-size: var(--size-step-min-1);
+  color: var(--color-quiet);
+}
+
+.index__row > .num:last-child {
+  text-align: end;
+}
+
+.index__rows--large .index__row {
+  padding-block: var(--space-m);
+}
+
+.index__rows--large .index__title {
+  font-family: var(--font-display);
+  font-weight: var(--font-extra-bold);
+  font-size: var(--size-step-2);
+  letter-spacing: var(--tracking-s);
+}
+
+@media (max-width: 640px) {
+  .index__row:has(> :nth-child(4)) {
+    grid-template-columns: 3ch minmax(0, 1fr) auto;
+  }
+  .index__row:has(> :nth-child(4)) .index__meta {
+    grid-column: 2;
+    grid-row: 2;
+  }
+  .index__row:has(> :nth-child(4)) > .num:last-child {
+    grid-column: 3;
+    grid-row: 1;
+  }
+}
+
+/* One sentence set large. The empty state of the episode record. */
+.statement {
+  max-inline-size: 28ch;
+  margin-block-start: var(--space-l-xl);
+  font-size: var(--size-step-3);
+  line-height: var(--leading-fine);
+}
+
+/* The feed address: its own full-width row on phones. */
+.sub-row {
+  display: grid;
+  grid-template-columns: 12rem minmax(0, 1fr);
+  gap: var(--space-s) var(--space-m);
+  align-items: center;
+  padding-block: var(--space-s);
+}
+
+.sub-row + .sub-row {
+  border-block-start: var(--stroke);
+}
+
+.sub-field input {
+  flex: 1 1 16rem;
+  min-inline-size: 0;
+  padding: var(--space-xs) var(--space-m);
+  border: 1px solid var(--color-rule-2);
+  border-radius: var(--border-radius-full);
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+@media (max-width: 640px) {
+  .sub-row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

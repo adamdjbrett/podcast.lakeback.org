@@ -1,0 +1,36 @@
+---
+title: Search
+pagefind: false
+---
+
+<link rel="stylesheet" href="/pagefind/pagefind-ui.css" />
+<label for="site-search">{{ labels.search.label }}</label>
+<div id="search"></div>
+<p id="search-status" class="visually-hidden" role="status" aria-atomic="true"></p>
+<p id="search-hint">{{ labels.search.hint }}</p>
+<noscript><p>{{ labels.search.noscript }} <a href="/sitemap.xml">sitemap.xml</a></p></noscript>
+
+{# deferred, so the script never holds up the page; the module below runs after it #}
+<script src="/pagefind/pagefind-ui.js" defer></script>
+<script type="module">
+  new PagefindUI({element: '#search', showImages: false, showSubResults: true, autofocus: true});
+  const input = document.querySelector('#search input');
+  input.id = 'site-search';
+  input.setAttribute('aria-describedby', 'search-hint');
+  const search = document.querySelector('#search');
+  const status = document.querySelector('#search-status');
+  new MutationObserver(() => {
+    const message = search.querySelector('.pagefind-ui__message')?.textContent || '';
+    if (status.textContent !== message) status.textContent = message;
+    // Loading skeletons are decorative; result text must remain readable by assistive technology.
+    for (const element of search.querySelectorAll('.pagefind-ui__loading, [data-search-placeholder]')) {
+      if (element.classList.contains('pagefind-ui__loading')) {
+        element.setAttribute('aria-hidden', 'true');
+        element.setAttribute('data-search-placeholder', '');
+      } else {
+        element.removeAttribute('aria-hidden');
+        element.removeAttribute('data-search-placeholder');
+      }
+    }
+  }).observe(search, {childList: true, subtree: true, characterData: true, attributes: true, attributeFilter: ['class']});
+</script>

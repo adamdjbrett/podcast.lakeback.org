@@ -1,0 +1,77 @@
+.episode__kicker {
+  color: var(--color-quiet);
+}
+
+.episode h1 {
+  --flow-space: var(--space-xs);
+  font-size: var(--size-step-5);
+}
+
+.episode__meta {
+  --gutter: var(--space-s) var(--space-xl);
+  padding-block: var(--space-s);
+  border-block: var(--stroke);
+}
+
+.episode__meta dt {
+  font-size: var(--size-step-min-1);
+  color: var(--color-quiet);
+}
+
+.episode__audio,
+.episode__player {
+  display: block;
+  inline-size: 100%;
+  max-inline-size: 60ch;
+}
+
+.episode__player {
+  block-size: 200px;
+  border: 0;
+}
+
+/* the show's large player above the list on /episodes/ */
+.episodes__player {
+  min-block-size: 375px; /* reserves the iframe's height before the script writes it */
+  margin-block-end: var(--space-l);
+  border-radius: var(--border-radius-medium);
+  overflow: hidden;
+}
+
+.episode__pager {
+  --flow-space: var(--space-xl);
+  padding-block-start: var(--space-m);
+  border-block-start: 2px solid var(--color-rule-2);
+}
+
+.episode__pager a {
+  display: grid;
+  font-weight: var(--font-bold);
+}
+
+.episode__pager span {
+  font-size: var(--size-step-min-1);
+  font-weight: var(--font-regular);
+  color: var(--color-quiet);
+}
+
+.citation {
+  --flow-space: var(--space-s);
+}
+
+.episode__transcript + .citation {
+  margin-block-start: var(--space-xl);
+}
+
+.citation h2 {
+  font-size: var(--size-step-1);
+}
+
+.citation__text {
+  overflow-wrap: anywhere;
+  user-select: all;
+}
+
+.citation__downloads {
+  font-size: var(--size-step-min-1);
+}

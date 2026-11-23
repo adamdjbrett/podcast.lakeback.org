@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="{{ meta.lang }}" prefix="zotero: http://www.zotero.org/namespaces/export# dc: http://purl.org/dc/elements/1.1/ dcterms: http://purl.org/dc/terms/ prism: http://prismstandard.org/namespaces/1.2/basic/ og: https://ogp.me/ns#">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% if title %}{{ title }} | {% endif %}{{ meta.siteName }}</title>
+
+    {% include "head/js-inline.njk" %}
+    {% include "head/schema.njk" %}
+    {% include "head/css-inline.njk" %}
+    {% include "head/preloads.njk" %}
+    {% include "head/meta-info.njk" %}
+  </head>
+
+  <body class="{{ layout }}">
+    {% set indicateActiveHome %}{% if page.url == "/" %}aria-current="page"{% endif %}{% endset %}
+    {% include "partials/header.njk" %}
+
+    <main id="main" tabindex="-1"{% if pagefind != false %} data-pagefind-body{% endif %}>{{ content | safe }}</main>
+
+    {% include "partials/footer.njk" %}
+  </body>
+</html>

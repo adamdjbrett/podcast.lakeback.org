@@ -1,0 +1,41 @@
+---
+permalink: '{{ meta.podcast.feed }}'
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>{{ meta.siteName }}: {{ meta.siteSubtitle }}</title>
+    <link>{{ meta.url }}/</link>
+    <language>{{ meta.lang }}</language>
+    <description>{{ meta.siteSubtitle }}</description>
+    <atom:link href="{{ meta.url }}{{ meta.podcast.feed }}" rel="self" type="application/rss+xml" />
+    <copyright>{{ meta.podcast.copyright }}</copyright>
+    <itunes:author>{{ meta.podcast.author }}</itunes:author>
+    <itunes:image href="{{ meta.url }}{{ meta.cover }}" />
+    <itunes:category text="{{ meta.podcast.category }}">
+      <itunes:category text="{{ meta.podcast.subcategory }}" />
+    </itunes:category>
+    <itunes:explicit>{{ "true" if meta.podcast.explicit else "false" }}</itunes:explicit>
+    <itunes:type>{{ meta.podcast.type }}</itunes:type>
+    <itunes:owner>
+      <itunes:name>{{ meta.podcast.author }}</itunes:name>
+      {%- if meta.podcast.ownerEmail %}
+      <itunes:email>{{ meta.podcast.ownerEmail }}</itunes:email>
+      {%- endif %}
+    </itunes:owner>
+    {%- for e in collections.episodes %}
+    <item>
+      <title>{{ e.data.title }}</title>
+      <link>{{ meta.url }}{{ e.url }}</link>
+      <guid isPermaLink="true">{{ meta.url }}{{ e.url }}</guid>
+      <pubDate>{{ e.date | rfc822 }}</pubDate>
+      <description>{{ e.data.description }}</description>
+      <enclosure url="{{ e.data.audio.url }}" length="{{ e.data.audio.length }}" type="{{ e.data.audio.type }}" />
+      <itunes:duration>{{ e.data.duration }}</itunes:duration>
+      <itunes:episode>{{ e.data.episode }}</itunes:episode>
+      <itunes:season>{{ e.data.season }}</itunes:season>
+      <itunes:explicit>{{ "true" if meta.podcast.explicit else "false" }}</itunes:explicit>
+    </item>
+    {%- endfor %}
+  </channel>
+</rss>

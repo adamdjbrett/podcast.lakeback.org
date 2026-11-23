@@ -1,0 +1,4 @@
+src/**/*.md
+src/common/*
+src/_includes/scripts/*
+src/_materials/

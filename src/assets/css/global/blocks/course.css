@@ -1,0 +1,10 @@
+.course__pager .button {
+  display: grid;
+  flex: 1 1 20rem;
+  justify-items: start;
+  line-height: var(--leading-fine);
+}
+
+.course__pager span {
+  font-size: var(--size-step-min-1);
+}

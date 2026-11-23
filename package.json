@@ -1,18 +1,40 @@
 {
-  "name": "podcast-lakeback-org",
+  "name": "aila-podcast-v2",
+  "version": "2.0.0",
+  "description": "Healing the Sacred podcast site (American Indian Law Alliance). Built on eleventy-excellent.",
+  "author": "American Indian Law Alliance",
+  "license": "ISC",
   "private": true,
   "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
-    "build": "buildawesome",
-    "dev": "buildawesome --serve --port=8080",
-    "deploy": "wrangler deploy",
-    "test": "node --test"
+    "clean": "rm -rf dist src/_includes/css src/_includes/scripts",
+    "dev": "ELEVENTY_ENV=development eleventy --serve --port=${PORT:-8080}",
+    "build": "npm run clean && ELEVENTY_ENV=production eleventy",
+    "bios:webp": "node src/_config/scripts/bios-to-webp.mjs",
+    "buzz": "node --env-file-if-exists=../.env src/_config/scripts/buzzsprout.mjs",
+    "deploy": "wrangler deploy"
   },
   "dependencies": {
-    "@awesome.me/buildawesome": "4.0.0-alpha.12",
-    "js-yaml": "5.5.0"
+    "@11ty/eleventy": "^3.1.6",
+    "@11ty/is-land": "^4.0.1"
   },
   "devDependencies": {
+    "esbuild": "^0.28.0",
+    "html-minifier-terser": "^7.2.0",
+    "markdown-it": "^14.2.0",
+    "markdown-it-anchor": "^9.2.0",
+    "markdown-it-attrs": "^5.0.0",
+    "pagefind": "1.6.0",
+    "prettier-plugin-jinja-template": "^2.2.0",
+    "slugify": "^1.6.9",
     "wrangler": "4.166.0"
+  },
+  "allowScripts": {
+    "esbuild@0.28.2": true,
+    "fsevents@2.3.3": true,
+    "workerd@1.20261119.1": true
   }
 }

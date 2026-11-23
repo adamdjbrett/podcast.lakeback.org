@@ -1,0 +1,19 @@
+---
+permalink: /site.webmanifest
+---
+{
+  "id": "/",
+  "name": {{ (meta.siteName + ": " + meta.siteSubtitle) | dump | safe }},
+  "short_name": {{ meta.siteName | dump | safe }},
+  "description": {{ meta.siteDescription | dump | safe }},
+  "lang": "{{ meta.lang }}",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "theme_color": "{{ meta.themeColor }}",
+  "background_color": "{{ meta.themeLight }}",
+  "icons": [
+    { "src": "/icon-192.webp", "sizes": "192x192", "type": "image/webp" },
+    { "src": "/icon-512.webp", "sizes": "512x512", "type": "image/webp" }
+  ]
+}

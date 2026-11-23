@@ -1,0 +1,49 @@
+/* Design tokens, frozen from the old src/_data/designTokens + Tailwind build (2026-11-22).
+   Only the custom properties the site uses; edit values here directly. */
+:root {
+  /* Colours */
+  --color-gray-100: #f8f8f8;
+  --color-gray-900: #161616;
+  --color-teal: #52c2c3;
+  --color-teal-subdued: #6cbebf;
+  --color-purple: #742a8b;
+  --color-yellow: #f3ed24;
+  --color-yellow-subdued: #f0ec67;
+  /* Radius */
+  --border-radius-medium: 0.5rem;
+  --border-radius-full: calc(infinity * 1px);
+  /* Space (fluid between 320px and 1360px viewports) */
+  --space-3xs: clamp(0.125rem, 0.11rem + 0.10vw, 0.1875rem);
+  --space-2xs: clamp(0.1875rem, 0.15rem + 0.19vw, 0.3125rem);
+  --space-xs: clamp(0.3125rem, 0.27rem + 0.19vw, 0.4375rem);
+  --space-s: clamp(0.625rem, 0.55rem + 0.38vw, 0.875rem);
+  --space-m: clamp(0.875rem, 0.74rem + 0.67vw, 1.3125rem);
+  --space-l: clamp(1.1875rem, 0.96rem + 1.15vw, 1.9375rem);
+  --space-xl: clamp(2.375rem, 2.03rem + 1.73vw, 3.5rem);
+  --space-2xl: clamp(3.5625rem, 3.04rem + 2.60vw, 5.25rem);
+  --space-s-m: clamp(0.625rem, 0.41rem + 1.06vw, 1.3125rem);
+  --space-m-l: clamp(0.875rem, 0.55rem + 1.63vw, 1.9375rem);
+  --space-l-xl: clamp(1.1875rem, 0.48rem + 3.56vw, 3.5rem);
+  --space-xl-2xl: clamp(2.375rem, 1.49rem + 4.42vw, 5.25rem);
+  /* Type scale (fluid) */
+  --size-step-min-2: clamp(0.69444375rem, 0.66rem + 0.16vw, 0.8rem);
+  --size-step-min-1: clamp(0.83333125rem, 0.78rem + 0.26vw, 1rem);
+  --size-step-0: clamp(1rem, 0.92rem + 0.38vw, 1.25rem);
+  --size-step-1: clamp(1.2rem, 1.09rem + 0.56vw, 1.5625rem);
+  --size-step-2: clamp(1.44rem, 1.28rem + 0.79vw, 1.953125rem);
+  --size-step-3: clamp(1.728rem, 1.51rem + 1.10vw, 2.44140625rem);
+  --size-step-4: clamp(2.0736rem, 1.77rem + 1.50vw, 3.05175625rem);
+  --size-step-5: clamp(2.48831875rem, 2.08rem + 2.04vw, 3.8147rem);
+  --size-step-6: clamp(2.98598125rem, 2.44rem + 2.74vw, 4.76836875rem);
+  /* Leading */
+  --leading-flat: 1;
+  --leading-fine: 1.2;
+  --leading-standard: 1.4;
+  /* Fonts and weights */
+  --font-display: Redhat,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
+  --font-base: Atkinson Hyperlegible,system-ui,sans-serif;
+  --font-mono: ui-monospace,Cascadia Code,Source Code Pro,Menlo,Consolas,DejaVu Sans Mono,monospace;
+  --font-regular: 400;
+  --font-bold: 700;
+  --font-extra-bold: 900;
+}

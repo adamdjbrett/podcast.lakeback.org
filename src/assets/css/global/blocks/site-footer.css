@@ -1,0 +1,23 @@
+.site-footer {
+  --cluster-horizontal-alignment: center;
+  background: var(--color-paper-2);
+  border-block-start: var(--stroke);
+}
+
+.site-footer__colophon {
+  margin: var(--space-m) auto;
+  max-inline-size: 60ch;
+  text-align: center;
+  font-size: var(--size-step-min-1);
+  color: var(--color-ink-2);
+}
+
+/* increase tap size */
+.site-footer nav a {
+  padding: var(--space-xs);
+}
+
+/* main fills the page; the last section meets the footer unless it is a lake band */
+main > :last-child:not(.lake) {
+  margin-block-end: var(--space-xl);
+}

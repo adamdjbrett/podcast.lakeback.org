@@ -1,0 +1,36 @@
+---
+permalink: /sw.js
+---
+// The build fingerprints the saved pages, fonts, images, and search index together.
+const CACHE = 'healing-sacred-__BUILD_REVISION__';
+const SHELL = __PRECACHE_ASSETS__;
+
+self.addEventListener('install', event => {
+  event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(SHELL)).then(() => self.skipWaiting()));
+});
+
+self.addEventListener('activate', event => {
+  event.waitUntil((async () => {
+    for (const key of await caches.keys()) {
+      if (key !== CACHE && (key === 'pages' || key.startsWith('healing-sacred-'))) await caches.delete(key);
+    }
+    await self.clients.claim();
+  })());
+});
+
+self.addEventListener('fetch', event => {
+  const {request} = event;
+  const url = new URL(request.url);
+  if (request.method !== 'GET' || url.origin !== location.origin || request.headers.has('range')) return;
+  if (!SHELL.includes(url.pathname) && (request.mode !== 'navigate' || /\.pdf$/i.test(url.pathname))) return;
+  event.respondWith((async () => {
+    const cache = await caches.open(CACHE);
+    try {
+      const response = await fetch(request);
+      if (response.ok && SHELL.includes(url.pathname)) await cache.put(url.pathname, response.clone());
+      return response;
+    } catch {
+      return (await cache.match(url.pathname)) || (request.mode === 'navigate' && (await cache.match('/offline/'))) || Response.error();
+    }
+  })());
+});

@@ -1,0 +1,124 @@
+---
+layout: base
+permalink: /index.html
+---
+
+{% set hasEpisodes = collections.episodes.length > 0 %}
+
+{# The featured apps (home.subscribe.featured): printed in the hero sheet (when no episode is out) and in the subscribe band. The rest, and the RSS feed, are on /subscribe/. #}
+{% set onlyDirectories = home.subscribe.featured %}
+{% set followRows %}{% include "partials/directory-rows.njk" %}{% endset %}
+{% set moreServices %}<a class="button" data-ghost-button href="/subscribe/">{{ home.subscribe.more | replace("{n}", meta.podcast.directories.length) }} <span aria-hidden="true">→</span></a>{% endset %}
+
+<section class="hero | wrapper region" aria-labelledby="hero-h" style="--wrapper-width: 90rem">
+  <div class="hero__grid">
+    <div class="hero__head | flow">
+      <h1 id="hero-h">{{ home.hero.headline }}</h1>
+      <p class="lead">{{ home.hero.sentence }}</p>
+      <div class="cluster gutter-s">
+        <a class="button" data-button-variant="primary" href="/episodes/">{{ home.hero.primaryAction }}</a>
+        <a class="button" data-ghost-button href="/subscribe/">{{ home.hero.secondaryAction }}</a>
+      </div>
+    </div>
+
+    <figure class="hero__cover">
+      {# pre-sized WebP in src/assets/images/template; 900 is the ceiling: a 1200px file cost a phone the largest-paint budget #}
+      <img
+        src="/assets/images/template/cover-360.webp"
+        srcset="/assets/images/template/cover-360.webp 360w, /assets/images/template/cover-480.webp 480w, /assets/images/template/cover-640.webp 640w, /assets/images/template/cover-900.webp 900w"
+        sizes="(min-width: 62.5rem) 40vw, calc(100vw - clamp(2rem, 12vw, 6rem))"
+        width="900"
+        height="900"
+        loading="eager"
+        fetchpriority="high"
+        decoding="async"
+        alt="{{ home.hero.coverAlt }}"
+      />
+    </figure>
+
+    <div class="hero__index | sheet index">
+      <div class="index__head | repel">
+        <h2>{{ home.episodes.heading }}</h2>
+        <a href="/episodes/">{{ labels.episode.all }}</a>
+      </div>
+      {% if hasEpisodes %}
+        <ol class="index__rows" role="list">
+          {% for ep in collections.episodes.slice(0, 4) %}
+            <li><a class="index__row" href="{{ ep.url }}"><span class="num">{{ ep.data.episode }}</span><span class="index__title">{{ ep.data.title }}</span><span class="num">{{ ep.data.duration }}</span></a></li>
+          {% endfor %}
+        </ol>
+      {% else %}
+        <ul class="index__rows" role="list">{{ followRows | safe }}</ul>
+        {{ moreServices | safe }}
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+<section class="letter | region" aria-labelledby="letter-h">
+  <div class="wrapper">
+    <div class="sidebar gutter-xl">
+      <h2 id="letter-h">{{ home.letter.heading }}</h2>
+      <div class="letter__body | flow">
+        {% for paragraph in home.letter.paragraphs %}
+          <p>{{ paragraph }}</p>
+        {% endfor %}
+        <p class="letter__signoff"><a class="no-indicator" href="{{ meta.author.website }}">{{ home.letter.signoff }}</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<img
+  class="lake-band"
+  src="/assets/images/template/lake-band-800.webp"
+  srcset="/assets/images/template/lake-band-800.webp 800w, /assets/images/template/lake-band-1400.webp 1400w"
+  sizes="100vw"
+  width="1400"
+  height="466"
+  loading="lazy"
+  decoding="async"
+  alt="{{ home.letter.imageAlt }}"
+/>
+
+<section class="record | region wrapper" aria-labelledby="record-h">
+  <div class="index">
+    <div class="index__head | repel">
+      <h2 id="record-h">{{ home.episodes.heading }}</h2>
+      {% if hasEpisodes %}<a href="/episodes/">{{ labels.episode.all }}</a>{% endif %}
+    </div>
+    {% if hasEpisodes %}
+      {% include "partials/episode-rows.njk" %}
+    {% else %}
+      <p class="statement">{{ home.episodes.emptyState }}</p>
+    {% endif %}
+  </div>
+</section>
+
+<section class="related | region" aria-labelledby="related-h">
+  <div class="wrapper"><h2 id="related-h">{{ home.related.heading }}</h2></div>
+  <ul class="rail" role="list" tabindex="0" aria-labelledby="related-h">
+    {% for item in home.related.items %}
+      <li class="rail__item | flow">
+        <h3><a class="no-indicator" href="{{ item.url }}">{{ item.title }}</a></h3>
+        <p>{{ item.note }}</p>
+        <p class="rail__meta | cluster gutter-xs"><span class="badge">{{ item.kind }}</span> <span class="num">{{ item.url | host }}</span></p>
+      </li>
+    {% endfor %}
+  </ul>
+</section>
+
+<section class="lake | region" aria-labelledby="follow-h">
+  <div class="wrapper">
+    <div class="sidebar gutter-xl">
+      <div class="flow">
+        <h2 id="follow-h">{{ home.subscribe.heading }}</h2>
+        <p class="lead">{{ home.subscribe.sentence }}</p>
+      </div>
+      <div class="flow">
+        <ul class="index__rows index__rows--large" role="list">{{ followRows | safe }}</ul>
+        {{ moreServices | safe }}
+      </div>
+    </div>
+  </div>
+</section>

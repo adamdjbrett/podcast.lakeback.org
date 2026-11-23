@@ -1,0 +1,5 @@
+{# One row per podcast app the show is listed in (meta.podcast.directories). Goes inside a ul.index__rows[role=list].
+   Set `onlyDirectories` (a list of icon names) before including to show just those. #}
+{% for d in meta.podcast.directories %}{% if not onlyDirectories or d.icon in onlyDirectories %}
+  <li><a class="index__row no-indicator" href="{{ d.url }}"><img class="index__icon" src="/assets/svg/directories/{{ d.icon }}.svg" alt="" width="24" height="24" loading="lazy" /><span class="index__title">{{ d.name }}</span><span class="num">{{ d.url | host }}</span></a></li>
+{% endif %}{% endfor %}

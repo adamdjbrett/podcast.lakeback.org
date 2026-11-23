@@ -1,0 +1,19 @@
+---
+layout: page
+pagination:
+  data: transcripts
+  size: 1
+  alias: transcript
+  addAllPagesToCollections: true
+permalink: '{{ transcript.url }}index.html'
+eleventyComputed:
+  title: 'Transcript: {{ transcript.title | safe }}'
+  description: '{{ transcript.description | safe }}'
+---
+
+<p>Read the transcript below, or <a href="{{ transcript.pdf }}" download>download the original transcript (PDF)</a>.</p>
+<p><a href="{{ transcript.guide }}">Discussion questions and resources for this episode</a></p>
+
+<p>Sung passages are marked <em>[Chris Thomas singing in Onondaga]</em>.</p>
+
+{{ transcript.html | safe }}

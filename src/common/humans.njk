@@ -1,0 +1,17 @@
+---
+permalink: /humans.txt
+---
+/* TEAM */
+Publisher: {{ meta.author.name | safe }}
+Site: {{ meta.author.website }}
+Contact: {{ meta.author.email }}
+
+/* SITE */
+Name: {{ meta.siteName | safe }}
+Language: {{ meta.lang }}
+Doctype: HTML5
+Generator: {{ eleventy.generator }}
+Credits: {{ meta.url }}/credits.txt
+{% for feed in meta.feeds -%}
+Feed: {{ meta.url }}{{ feed.url }}
+{% endfor %}

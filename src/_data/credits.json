@@ -1,0 +1,12 @@
+[
+  { "role": "Publisher", "name": "American Indian Law Alliance", "url": "https://aila.ngo" },
+  { "role": "Campaign", "name": "LakeBack", "url": "https://lakeback.org" },
+  { "role": "Site generator", "name": "Eleventy (11ty / Build Awesome), created by Zach Leatherman", "url": "https://www.11ty.dev" },
+  { "role": "Starter", "name": "Eleventy Excellent, created by Lene Saile", "url": "https://github.com/madrilene/eleventy-excellent" },
+  { "role": "Starter contributors", "name": "Everyone who has contributed to Eleventy Excellent", "url": "https://github.com/madrilene/eleventy-excellent/graphs/contributors" },
+  { "role": "CSS method", "name": "CUBE CSS and Every Layout, by Andy Bell and Heydon Pickering", "url": "https://cube.fyi" },
+  { "role": "Icons", "name": "Phosphor Icons, by Helena Zhang and Tobias Fried", "url": "https://phosphoricons.com" },
+  { "role": "Search", "name": "Pagefind", "url": "https://pagefind.app" },
+  { "role": "Display type", "name": "Red Hat Display", "url": "https://github.com/RedHatOfficial/RedHatFont" },
+  { "role": "Text type", "name": "Atkinson Hyperlegible, Braille Institute", "url": "https://www.brailleinstitute.org/freefont/" }
+]

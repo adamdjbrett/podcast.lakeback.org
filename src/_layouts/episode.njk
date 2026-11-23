@@ -1,0 +1,64 @@
+---
+layout: base
+---
+
+{% set l = labels.episode %}
+{% set ep = collections.episodes | getCollectionItem %}
+
+<article class="episode h-entry | region wrapper flow prose" style="--region-space-top: var(--space-xl-2xl)">
+  <p class="episode__kicker">
+    {% if season %}{{ l.season }} <span class="num">{{ season }}</span>, {% endif %}{{ l.episode }} <span class="num">{{ episode }}</span>
+  </p>
+  <h1 class="p-name">{{ title }}</h1>
+  {% if description %}<p class="p-summary lead">{{ description }}</p>{% endif %}
+
+  <dl class="episode__meta | cluster">
+    <div><dt>{{ l.published }}</dt><dd class="num"><time class="dt-published" datetime="{{ page.date | isoDate }}">{{ page.date | readableDate }}</time></dd></div>
+    {% if duration %}<div><dt>{{ l.length }}</dt><dd class="num">{{ duration }}</dd></div>{% endif %}
+    {% macro person(name) %}{% set href = name | bioUrl(collections.bios) %}{% if href %}<a href="{{ href }}">{{ name }}</a>{% else %}{{ name }}{% endif %}{% endmacro %}
+    {% if host %}<div><dt>{{ l.host }}</dt><dd>{{ person(host) }}</dd></div>{% endif %}
+    {% if guests and guests.length %}<div><dt>{{ l.guests }}</dt><dd>{% for g in guests %}{{ person(g) }}{% if not loop.last %}, {% endif %}{% endfor %}</dd></div>{% endif %}
+    <div><dt>{{ l.music }}</dt><dd>{{ person('Chris Thomas') }}</dd></div>
+    <div><dt>{{ l.publisher }}</dt><dd><a class="p-author h-card no-indicator" rel="author" href="{{ meta.author.website }}"><span class="p-name">{{ meta.author.name }}</span></a></dd></div>
+  </dl>
+
+  {% if buzzsprout %}
+    {# Buzzsprout's oEmbed iframe, built from the episode ID; the fixed height reserves its space #}
+    <iframe class="episode__player" src="https://www.buzzsprout.com/2667694/episodes/{{ buzzsprout }}?client_source=small_player&amp;iframe=true&amp;color={{ meta.podcast.buzzsprout.color }}" width="100%" height="200" scrolling="no" loading="lazy" title="{{ l.player }}: {{ title }}"></iframe>
+  {% elif audio.url %}
+    <audio class="episode__audio u-audio" controls preload="none" src="{{ audio.url }}">
+      <a href="{{ audio.url }}">{{ l.download }}</a>
+    </audio>
+  {% endif %}
+
+  <div class="e-content | flow">{{ content | safe }}</div>
+
+  {% if transcript %}<p class="episode__transcript"><a class="button" data-button-variant="primary" href="{{ transcript }}">{{ l.transcript }}</a></p>{% endif %}
+
+  {% if ep %}
+    <section class="citation | sheet flow" aria-labelledby="cite-h">
+      <div class="repel">
+        <h2 id="cite-h">{{ labels.citation.heading }}</h2>
+        <button class="button" data-ghost-button data-small-button type="button" data-copy="cite-text" data-copied="{{ labels.copy.done }}" hidden>{{ labels.copy.idle }}</button>
+      </div>
+      <p id="copy-status" class="visually-hidden" role="status" aria-atomic="true" data-error="{{ labels.copy.error }}"></p>
+      <p id="cite-text" class="citation__text">{{ ep | cite(meta) | safe }}</p>
+      <p class="citation__downloads | cluster gutter-s">
+        <span>{{ labels.citation.style }}. {{ labels.citation.downloads }}:</span>
+        {% for format in meta.citations.formats %}
+          <a href="{{ meta.citations.path }}{{ page.fileSlug }}.{{ format.ext }}" download>{{ format.label }}</a>
+        {% endfor %}
+      </p>
+    </section>
+  {% endif %}
+
+  <nav class="episode__pager | grid" aria-label="{{ l.pager }}">
+    {# collections.episodes is newest first, so the next index is the earlier episode #}
+    {% set older = collections.episodes | getNextCollectionItem %}
+    {% set newer = collections.episodes | getPreviousCollectionItem %}
+    {% if older %}<a href="{{ older.url }}" rel="prev"><span>{{ l.older }}</span>{{ older.data.title }}</a>{% endif %}
+    {% if newer %}<a href="{{ newer.url }}" rel="next"><span>{{ l.newer }}</span>{{ newer.data.title }}</a>{% endif %}
+    <a class="u-url u-uid" href="{{ meta.url }}{{ page.url }}" hidden>{{ title }}</a>
+    <a href="/episodes/"><span>{{ l.back }}</span>{{ l.all }}</a>
+  </nav>
+</article>

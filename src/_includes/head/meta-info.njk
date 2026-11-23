@@ -1,0 +1,112 @@
+{% set metaTitle = title or meta.siteName %}
+{% set metaDescription = description or meta.siteDescription %}
+{% set canonical = meta.url + page.url %}
+{% set isEpisode = layout == 'episode' %}
+{% set isGuide = layout == 'course' %}
+{% set isGuideIndex = isGuide and page.url == '/course/' %}
+{% set citationTitle = guideCitation.title if isGuideIndex else metaTitle %}
+{% set isoDate = page.date | isoDate if isEpisode %}
+
+<meta name="description" content="{{ metaDescription }}" />
+<meta name="theme-color" content="{{ meta.themeDark }}" media="(prefers-color-scheme: dark)" />
+<meta name="theme-color" content="{{ meta.themeLight }}" media="(prefers-color-scheme: light)" />
+<meta name="generator" content="{{ eleventy.generator }}" />
+<meta name="color-scheme" content="light dark" />
+<link rel="canonical" href="{{ canonical }}" />
+<link rel="author" href="{{ meta.author.website }}" />
+<link rel="me" href="{{ meta.author.website }}" />
+<link rel="human-json" href="/humans.json" />
+
+<meta property="og:url" content="{{ canonical }}" />
+<meta property="og:type" content="{{ 'article' if isEpisode else 'website' }}" />
+<meta property="og:title" content="{{ metaTitle }}" />
+<meta property="og:image" content="{{ meta.url }}{{ image or meta.opengraph_default }}" />
+<meta property="og:image:alt" content="{{ meta.opengraph_default_alt }}" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="1200" />
+<meta property="og:description" content="{{ metaDescription }}" />
+<meta property="og:site_name" content="{{ meta.siteName }}" />
+<meta property="og:locale" content="{{ meta.locale }}" />
+<meta name="twitter:card" content="summary_large_image" />
+
+{# Dublin Core, on every page #}
+<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
+<link rel="schema.DCTERMS" href="http://purl.org/dc/terms/" />
+<meta name="DC.title" content="{{ citationTitle }}" />
+{% if isGuide %}
+  {% for author in guideCitation.authors %}<meta name="DC.creator" content="{{ author.family }}, {{ author.given }}" />{% endfor %}
+{% elif isEpisode and host %}
+  <meta name="DC.creator" content="{{ meta.sortName(host) }}" />
+{% else %}
+  <meta name="DC.creator" content="{{ meta.author.name }}" />
+{% endif %}
+{% if isEpisode %}
+  {% for guest in guests %}<meta name="DC.contributor" content="{{ meta.sortName(guest) }}" />{% endfor %}
+  {% for tag in tags %}<meta name="DC.subject" content="{{ tag | replace('-', ' ') }}" />{% endfor %}
+{% endif %}
+<meta name="DC.publisher" content="{{ meta.author.name }}" />
+{# DCTERMS, not DC: with zotero:itemType set, Zotero's RDF import copies DC.description into the Extra field. #}
+<meta name="DCTERMS.description" content="{{ metaDescription }}" />
+<meta name="DC.type" scheme="DCTERMS.DCMIType" content="{{ 'Sound' if isEpisode else 'Text' }}" />
+<meta name="DC.format" scheme="DCTERMS.IMT" content="text/html" />
+<meta name="DC.identifier" scheme="DCTERMS.URI" content="{{ canonical }}" />
+<meta name="DC.language" scheme="DCTERMS.RFC4646" content="{{ meta.lang }}" />
+<meta name="DC.rights" content="{{ meta.license.name }}; © {{ meta.podcast.copyright }}" />
+<link rel="DCTERMS.license" href="{{ meta.license.url }}" />
+{% if page.url != '/' %}<meta name="DCTERMS.isPartOf" scheme="DCTERMS.URI" content="{{ meta.url }}{{ '/course/' if isGuide and not isGuideIndex else '/' }}" />{% endif %}
+{% if isEpisode %}
+  <meta name="DC.date" scheme="DCTERMS.W3CDTF" content="{{ isoDate }}" />
+  <meta name="DCTERMS.issued" scheme="DCTERMS.W3CDTF" content="{{ isoDate }}" />
+  {% if audio.url %}<link rel="DCTERMS.hasFormat" type="{{ audio.type }}" href="{{ audio.url }}" />{% endif %}
+{% endif %}
+{% if isGuideIndex %}
+  <meta name="DC.date" scheme="DCTERMS.W3CDTF" content="{{ guideCitation.year }}" />
+  <meta name="DCTERMS.issued" scheme="DCTERMS.W3CDTF" content="{{ guideCitation.year }}" />
+  <link rel="DCTERMS.hasFormat" type="application/pdf" href="{{ meta.url }}{{ meta.curriculumGuide.pdf }}" />
+{% endif %}
+
+{# Explicit types prevent citation_title from falling back to journalArticle in Zotero. #}
+<meta property="zotero:itemType" content="{{ 'podcast' if isEpisode else ('report' if isGuideIndex else 'webpage') }}" />
+<meta name="citation_title" content="{{ citationTitle }}" />
+{% if isGuide %}
+  {% for author in guideCitation.authors %}<meta name="citation_author" content="{{ author.family }}, {{ author.given }}" />{% endfor %}
+{% elif isEpisode %}
+  {# No citation_author here: Zotero lets citation_author replace every RDF creator, which would turn guests into podcasters.
+     Zotero's podcast creator types read zotero:podcasters and zotero:guests instead. #}
+  {% if host %}<meta property="zotero:podcasters" content="{{ meta.sortName(host) }}" />{% endif %}
+  {% for guest in guests %}<meta property="zotero:guests" content="{{ meta.sortName(guest) }}" />{% endfor %}
+{% else %}
+  <meta name="citation_author" content="{{ meta.author.name }}" />
+{% endif %}
+<meta name="citation_publisher" content="{{ meta.author.name }}" />
+<meta name="citation_abstract" content="{{ metaDescription }}" />
+<meta name="citation_public_url" content="{{ canonical }}" />
+<meta name="citation_language" content="{{ meta.lang }}" />
+<meta name="prism.publicationName" content="{{ meta.siteName }}" />
+{% if isEpisode %}
+  <meta name="citation_date" content="{{ isoDate }}" />
+  {# Zotero reads the episode number from prism.number (issue, moved to the podcast's Episode Number). The translator ignores
+     zotero:episodeNumber and zotero:seriesTitle, and has no route to Series Title: prism.publicationName ends up in Extra. #}
+  <meta name="prism.number" content="{{ episode }}" />
+  <meta property="zotero:episodeNumber" content="{{ episode }}" />
+  <meta property="zotero:seriesTitle" content="{{ meta.siteName }}" />
+  <meta name="prism.genre" content="podcast" />
+{% endif %}
+{% if isGuideIndex %}
+  <meta name="citation_date" content="{{ guideCitation.year }}" />
+  <meta name="citation_technical_report_institution" content="{{ meta.author.name }}" />
+  <meta name="citation_pdf_url" content="{{ meta.url }}{{ meta.curriculumGuide.pdf }}" />
+{% endif %}
+{% if isEpisode or isGuide %}
+  {% set citationSlug = guideCitation.id if isGuide else page.fileSlug %}
+  {% for format in meta.citations.formats %}
+    <link rel="alternate" title="{{ format.label }}" href="{{ meta.citations.path }}{{ citationSlug }}.{{ format.ext }}" />
+  {% endfor %}
+{% endif %}
+
+{% for feed in meta.feeds %}
+  <link rel="alternate" type="{{ feed.type }}" title="{{ meta.siteName }}: {{ feed.title }}" href="{{ feed.url }}" />
+{% endfor %}
+<link rel="icon" type="image/webp" href="/favicon.webp" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />

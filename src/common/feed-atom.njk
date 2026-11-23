@@ -1,0 +1,24 @@
+---
+permalink: /feed/feed.xml
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="{{ meta.lang }}">
+  <title>{{ meta.siteName }}: {{ meta.siteSubtitle }}</title>
+  <subtitle>{{ meta.siteDescription }}</subtitle>
+  <link href="{{ meta.url }}{{ page.url }}" rel="self" />
+  <link href="{{ meta.url }}/" />
+  <updated>{{ (collections.episodes[0].date if collections.episodes.length else page.date) | toIsoString }}</updated>
+  <id>{{ meta.url }}/</id>
+  <author><name>{{ meta.author.name }}</name></author>
+  {%- for e in collections.episodes %}
+  <entry>
+    <title>{{ e.data.title }}</title>
+    <link href="{{ meta.url }}{{ e.url }}" />
+    <link rel="enclosure" href="{{ e.data.audio.url }}" length="{{ e.data.audio.length }}" type="{{ e.data.audio.type }}" />
+    <updated>{{ e.date | toIsoString }}</updated>
+    <id>{{ meta.url }}{{ e.url }}</id>
+    <summary>{{ e.data.description }}</summary>
+    <content type="html">{{ e.content }}</content>
+  </entry>
+  {%- endfor %}
+</feed>

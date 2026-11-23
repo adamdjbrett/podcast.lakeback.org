@@ -1,0 +1,54 @@
+{
+  "episode": {
+    "season": "Season",
+    "episode": "Episode",
+    "published": "Published",
+    "publisher": "Publisher",
+    "length": "Length",
+    "host": "Host",
+    "guests": "Guests",
+    "music": "Music",
+    "download": "Download the audio",
+    "player": "Healing the Sacred episode player",
+    "transcript": "Read the transcript",
+    "pager": "More episodes",
+    "older": "Earlier episode",
+    "newer": "Later episode",
+    "back": "Back",
+    "all": "All episodes"
+  },
+  "citation": {
+    "heading": "Cite this episode",
+    "style": "Chicago Manual of Style",
+    "downloads": "Download the citation"
+  },
+  "course": {
+    "by": "By",
+    "download": "Download the curriculum guide",
+    "downloadShort": "Download PDF",
+    "back": "Curriculum guide index",
+    "navigation": "Curriculum guide navigation",
+    "previous": "Previous",
+    "next": "Next",
+    "contents": "Contents",
+    "cite": "Cite this curriculum guide"
+  },
+  "copy": { "idle": "Copy", "done": "Copied", "error": "Could not copy. Select the text and copy it using your device's copy command." },
+  "subscribe": {
+    "lead": "Any podcast app can follow the feed address below.",
+    "address": "Feed address",
+    "empty": "Subscribe to the feed",
+    "apps": "Listen in your podcast app",
+    "hosted": "Buzzsprout RSS feed",
+    "other": "Other feeds"
+  },
+  "search": {
+    "label": "Search this site",
+    "hint": "Press Control+K, or Command+K on a Mac, from any page to come here.",
+    "noscript": "Search needs JavaScript. Every page is also listed in the sitemap."
+  },
+  "notFound": {
+    "lead": "The page you are looking for has moved or does not exist.",
+    "home": "Home"
+  }
+}

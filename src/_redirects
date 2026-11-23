@@ -1,0 +1,2 @@
+# Cloudflare Workers static assets (copied to dist by eleventy.config.js). The podcast feed lived here in v1.
+/feed.xml /feed/feed.rss 301

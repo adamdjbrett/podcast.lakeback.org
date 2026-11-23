@@ -1,0 +1,115 @@
+/*
+	Global styles
+
+	Low-specificity, global styles that apply to the whole
+	project: https://cube.fyi/css.html
+*/
+
+html {
+  scroll-padding-top: 8rem;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-base);
+  font-size: var(--size-step-0);
+  font-weight: var(--font-regular);
+  font-size-adjust: from-font;
+  line-height: var(--leading-standard);
+  color: var(--color-text);
+  /* light on the surface, deepening as the page goes down */
+  background: linear-gradient(var(--color-sheet), var(--color-paper) 36rem, var(--color-paper-2));
+  accent-color: var(--color-primary);
+  letter-spacing: var(--tracking);
+}
+
+main {
+  flex: auto;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: var(--font-extra-bold);
+  line-height: var(--leading-fine);
+  letter-spacing: var(--tracking-s);
+  overflow-wrap: anywhere;
+}
+
+h1 {
+  font-size: var(--size-step-6);
+}
+
+h2 {
+  font-size: var(--size-step-4);
+}
+
+h3 {
+  font-size: var(--size-step-2);
+}
+
+input,
+textarea {
+  caret-color: var(--color-primary);
+}
+
+svg {
+  block-size: 0.6lh;
+  inline-size: auto;
+  flex: none;
+}
+
+b,
+strong {
+  font-weight: var(--font-bold);
+}
+
+a {
+  text-decoration-thickness: 0.15ex;
+  text-underline-offset: 0.2ch;
+}
+
+a:not([class]):hover {
+  text-decoration: none;
+}
+
+:focus {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 3px solid var(--focus-color, currentColor);
+  outline-offset: var(--focus-offset, 0.3ch);
+}
+
+/* reduce focus offset for Firefox
+*/
+@supports (-moz-appearance: none) {
+  :root {
+    --focus-offset: 0.08em;
+  }
+}
+
+::selection {
+  background-color: var(--color-text);
+  color: var(--color-bg);
+}
+
+/* Figures and addresses only: episode numbers, durations, dates, the feed address. */
+.num {
+  font-family: var(--font-mono);
+  font-size: var(--size-step-min-1);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0;
+}
+
+.lead {
+  font-size: var(--size-step-1);
+  max-inline-size: 52ch;
+}
+
+[hidden] {
+  display: none !important;
+}

@@ -1,0 +1,10 @@
+---
+permalink: /credits.txt
+---
+{{ meta.siteName | safe }}: {{ meta.siteSubtitle | safe }}
+{{ home.footer.colophon | safe }}
+
+{% for credit in credits -%}
+{{ credit.role }}: {{ credit.name | safe }}
+  {{ credit.url }}
+{% endfor %}

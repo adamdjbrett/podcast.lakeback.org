@@ -1,0 +1,27 @@
+<a href="#main" class="skip-link">{{ meta.skipContent }}</a>
+
+{# Publisher banner: scrolls away. The bar below it stays. #}
+<div class="site-banner | wrapper" role="region" aria-label="Publisher">
+  <div class="repel">
+    <a class="no-indicator" href="{{ meta.author.website }}">{{ meta.author.name }}</a>
+    <a class="no-indicator" href="{{ meta.links.lakeback }}">{{ meta.links.lakeback | host }}</a>
+  </div>
+</div>
+
+<header class="site-header | wrapper" style="--wrapper-width: 90rem">
+  <div class="repel gutter-s">
+    <a href="/" class="logo | cluster" {{ indicateActiveHome | safe }}>
+      <img src="/assets/images/template/logo-144.webp" alt="" width="144" height="144" loading="eager" decoding="async" />
+      <span class="logo__label | font-display">{{ meta.siteName }}</span>
+    </a>
+
+    <nav class="mainnav" aria-label="{{ meta.navigation.ariaTop }}">
+      <ul class="cluster" role="list">
+        {% for item in navigation.top %}
+          <li><a href="{{ item.url }}" {{ helpers.getLinkActiveState(item.url, page.url) | safe }}>{{ item.text }}</a></li>
+        {% endfor %}
+        <li><a class="button" data-button-variant="primary" href="{{ navigation.top[0].url }}">{{ home.hero.primaryAction }}</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>

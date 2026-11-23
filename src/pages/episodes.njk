@@ -1,0 +1,18 @@
+---
+title: Episodes
+---
+
+{% if collections.episodes.length %}
+  {# Buzzsprout's large player; the script writes a 375px iframe into the div, `color` sets its progress bar #}
+  <div id="buzzsprout-large-player" class="episodes__player"></div><script type="text/javascript" charset="utf-8" src="https://www.buzzsprout.com/{{ meta.podcast.buzzsprout.id }}.js?container_id=buzzsprout-large-player&amp;player=large&amp;color={{ meta.podcast.buzzsprout.color }}"></script>
+{% endif %}
+<div class="sheet index">
+  {% if collections.episodes.length %}
+    {% include "partials/episode-rows.njk" %}
+  {% else %}
+    <div class="flow">
+      <p>{{ home.episodes.emptyState }}</p>
+      <p><a class="button" data-ghost-button href="/subscribe/">{{ labels.subscribe.empty }}</a></p>
+    </div>
+  {% endif %}
+</div>

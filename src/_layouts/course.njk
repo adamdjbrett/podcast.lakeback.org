@@ -1,0 +1,45 @@
+---
+layout: base
+---
+
+{% set l = labels.course %}
+
+<article class="course h-entry | region wrapper flow prose" style="--region-space-top: var(--space-xl-2xl)">
+  {% if courseSection %}
+    <nav class="cluster gutter-s text-step-min-1" aria-label="{{ l.navigation }}">
+      <a class="min-h-[24px]" href="/course/">{{ l.back }}</a>
+      <a class="button min-h-[24px]" data-ghost-button data-small-button href="{{ meta.curriculumGuide.pdf }}" download>{{ l.downloadShort }} ({{ pdfSize }})</a>
+      {% if courseSection.slug != 'series-details' %}<a href="/transcripts/{{ courseSection.slug }}/">{{ labels.episode.transcript }}</a>{% endif %}
+    </nav>
+  {% endif %}
+  <h1 class="p-name">{{ title }}</h1>
+  <a class="u-url u-uid" href="{{ meta.url }}{{ page.url }}" hidden>{{ title }}</a>
+  {% if not courseSection %}<p class="p-summary lead">{{ description }}</p>{% endif %}
+  <p>{{ l.by }} {% for author in guideCitation.authors %}<a class="p-author h-card no-indicator" rel="author" href="{{ meta.url }}{{ author.url }}"><span class="p-name">{{ author.given }} {{ author.family }}</span></a>{% if not loop.last %} and {% endif %}{% endfor %}</p>
+
+  <div class="e-content | flow">{{ content | safe }}</div>
+
+  <nav class="course__pager | repel" aria-label="{{ l.navigation }}">
+    {% if coursePager.previous %}
+      <a class="button" data-ghost-button href="{{ coursePager.previous.url }}" rel="prev"><span>{{ l.previous }}</span><strong>{{ coursePager.previous.title }}</strong></a>
+    {% endif %}
+    {% if coursePager.next %}
+      <a class="button" data-ghost-button href="{{ coursePager.next.url }}" rel="next"><span>{{ l.next }}</span><strong>{{ coursePager.next.title }}</strong></a>
+    {% endif %}
+  </nav>
+
+  <section class="citation | sheet flow" aria-labelledby="cite-h">
+    <div class="repel">
+      <h2 id="cite-h">{{ l.cite }}</h2>
+      <button class="button" data-ghost-button data-small-button type="button" data-copy="cite-text" data-copied="{{ labels.copy.done }}" hidden>{{ labels.copy.idle }}</button>
+    </div>
+    <p id="copy-status" class="visually-hidden" role="status" aria-atomic="true" data-error="{{ labels.copy.error }}"></p>
+    <p id="cite-text" class="citation__text">{{ guideCitation | citeGuide(meta) | safe }}</p>
+    <p class="citation__downloads | cluster gutter-s">
+      <span>{{ labels.citation.style }}. {{ labels.citation.downloads }}:</span>
+      {% for format in meta.citations.formats %}
+        <a href="{{ meta.citations.path }}{{ guideCitation.id }}.{{ format.ext }}" download>{{ format.label }}</a>
+      {% endfor %}
+    </p>
+  </section>
+</article>

@@ -1,0 +1,18 @@
+---
+layout: base
+---
+
+<article class="h-card | region wrapper flow prose" style="--region-space-top: var(--space-xl-2xl)">
+  {% if avatar %}<img class="u-photo" src="{{ avatar }}" alt="{{ avatar_alt or name }}" width="200" height="200" decoding="async" style="border-radius: 50%; object-fit: cover; aspect-ratio: 1">{% endif %}
+  {% if avatar_credit %}<p class="avatar-credit" style="font-size: var(--size-step-min-1); color: var(--color-quiet)">{% if avatar_credit_url %}<a href="{{ avatar_credit_url }}">{{ avatar_credit }}</a>{% else %}{{ avatar_credit }}{% endif %}</p>{% endif %}
+  <h1 class="p-name">{{ name }}</h1>
+  <a class="u-url u-uid" href="{{ meta.url }}{{ page.url }}" hidden>{{ name }}</a>
+  {% if bio %}<p class="p-note lead">{{ bio }}</p>{% endif %}
+  <div class="flow">{{ content | safe }}</div>
+  {% if links and links.length %}
+    {# Phosphor icon names (src/assets/svg/phosphor/); websites use "globe", Bluesky uses "butterfly" #}
+    <ul class="cluster" role="list">
+      {% asyncEach link in links %}<li><a class="u-url" href="{{ link.url }}">{% svg "phosphor/" + (link.icon or "globe") %} {{ link.label }}</a></li>{% endeach %}
+    </ul>
+  {% endif %}
+</article>
