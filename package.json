@@ -15,7 +15,7 @@
     "build": "npm run clean && ELEVENTY_ENV=production eleventy",
     "bios:webp": "node src/_config/scripts/bios-to-webp.mjs",
     "buzz": "node --env-file-if-exists=../.env src/_config/scripts/buzzsprout.mjs",
-    "deploy": "wrangler deploy"
+    "deploy": "npm run build && wrangler deploy"
   },
   "dependencies": {
     "@11ty/eleventy": "^3.1.6",

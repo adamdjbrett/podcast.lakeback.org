@@ -11,7 +11,7 @@ Notable changes to the Healing the Sacred site. The format follows [Keep a Chang
 - `/humans.json` (vouches for aila.ngo, aila.social, lakeback.org, adamdjbrett.com and six peer sites) and `<link rel="human-json">` in the head.
 - The Buzzsprout large player at the top of `/episodes/`, from Buzzsprout's embed script with `color` set to `meta.podcast.buzzsprout.color` (`d49838`, the `--color-primary` ochre). Episode-page players take the same colour.
 - Cloudflare static-asset rules: `src/_headers` (citation downloads, font caching, `sw.js` and manifest headers) and `src/_redirects` (`/feed.xml` → `/feed/feed.rss`, 301), ported from `netlify.toml`. `wrangler.jsonc` serves `404.html` via `not_found_handling: "404-page"`.
-- `.node-version` (22) for Workers Builds.
+- Faster Workers Builds deploys: `wrangler.jsonc` no longer has a `build.command`, so `wrangler deploy` stops rebuilding the site the dashboard build just made (`npm run deploy` now runs `npm run build && wrangler deploy` locally). No `.node-version`, so the build uses the image's preinstalled Node 24 instead of downloading a newer 22.x. `.npmrc` turns off audit and fund during install.
 - Plain-CSS design tokens: `src/assets/css/global/base/tokens.css` (the 39 custom properties the site uses) and `token-utilities.css` (the 9 utility classes the templates use).
 - Pre-sized WebP images in `src/assets/images/`: `cover-{360,480,640,900}.webp`, `cover-1200.webp` (Open Graph), `lake-band-{800,1400}.webp`, `logo-144.webp`, and `favicon.webp`, `icon-192.webp`, `icon-512.webp`.
 
