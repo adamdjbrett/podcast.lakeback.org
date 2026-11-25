@@ -57,10 +57,11 @@ export const podcast = {
   buzzsprout: {id: 2667694, feed: 'https://feeds.buzzsprout.com/2667694.rss', color: 'd49838'},
   // Where the show is listed (Buzzsprout > Directories). Rendered with icons on /subscribe/ and the home page,
   // and listed as the podcast's sameAs in the JSON-LD. Icon = src/assets/svg/directories/<icon>.svg.
-  // ponytail: YouTube, Amazon Music and Pocket Casts are left out until Buzzsprout shows them as listed.
+  // ponytail: Amazon Music and Pocket Casts are left out until Buzzsprout shows them as listed.
   directories: [
     {name: 'Apple Podcasts', icon: 'apple-podcasts', url: 'https://podcasts.apple.com/podcast/id6838173635'},
     {name: 'Spotify', icon: 'spotify', url: 'https://open.spotify.com/show/65Tj23KRuMYTJJFxhJkY5n'},
+    {name: 'YouTube', icon: 'youtube', url: 'https://www.youtube.com/playlist?list=PLE98CAQgldhg'},
     {name: 'iHeartRadio', icon: 'iheartradio', url: 'https://iheart.com/podcast/350604028'},
     {name: 'Overcast', icon: 'overcast', url: 'https://overcast.fm/itunes6838173635'},
     {name: 'Castro', icon: 'castro', url: 'https://castro.fm/itunes/6838173635'},
