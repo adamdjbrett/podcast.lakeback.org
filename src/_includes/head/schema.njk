@@ -1,5 +1,5 @@
 {# Built by meta.jsonLd in src/_data/meta.js: WebSite, PodcastSeries and Organization on every page, plus PodcastEpisode on episodes. #}
 {% set ldEpisode = {url: page.url, title: title, description: description, date: page.date, episode: episode, host: host, guests: guests, tags: tags, audio: audio, bios: collections.bios} if layout == 'episode' %}
 <script type="application/ld+json">
-  {{ meta.jsonLd(meta, ldEpisode) | safe }}
+  {{ meta.jsonLd(meta, ldEpisode, collections.episodes) | safe }}
 </script>
