@@ -1,7 +1,9 @@
 ---
 title: "Jake Edwards on Onondaga Lake and the Ganohé:nio"
 description: "Jake Edwards of the Onondaga Nation Eel Clan recalls waste pumped into Onondaga Lake in the 1960s and discusses the Ganohé:nio and the Doctrine of Discovery."
-date: 2026-11-14
+date: 2026-11-22
+duration: "33:20"
+bytes: 24051276
 host: "Betty Lyons Hill"
 guests: ["Jake Edwards"]
 tags: ["onondaga-lake", "thanksgiving-address", "land-rights", "doctrine-of-discovery", "treaties", "contamination"]

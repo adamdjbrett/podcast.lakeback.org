@@ -1,7 +1,9 @@
 ---
 title: "Rex Lyons on Lacrosse and the Haudenosaunee Nationals, Part 1"
 description: "Rex Lyons, Eel Clan, talks with Betty Lyons Hill about wooden sticks, the medicine game and the secular game, and how the Iroquois Nationals began."
-date: 2026-11-14
+date: 2026-11-22
+duration: "31:04"
+bytes: 22424865
 host: "Betty Lyons Hill"
 guests: ["Rex Lyons"]
 tags: ["lacrosse", "haudenosaunee", "sovereignty", "environment", "oral-history"]

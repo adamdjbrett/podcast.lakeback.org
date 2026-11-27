@@ -15,19 +15,19 @@ Healing the Sacred works through story, ceremony, and public scholarship. It add
 
 The podcast takes its name from an article published in the International Journal on Responsibility, [Healing the Sacred: The Fight to Restore Onondaga Lake and Honor Indigenous Land](https://commons.lib.jmu.edu/ijr/vol9/iss1/2/). The article sets Haudenosaunee teachings beside the European Christian Doctrine of Discovery and shows how that clash of worldviews led to violence, land theft, and genocide against the Haudenosaunee and other Indigenous Nations. Like the article, it makes the case that returning Onondaga Lake to the Onondaga Nation is a vital step toward restoring this sacred place. That return would bring long-overdue healing to its people, the surrounding communities, and the natural world. Protecting and restoring the lake serves the well-being of all.
 
-Episodes are in production
-
 ## Guests
 
-- Tina Thomas
-- Sarah Shute
-- Rex Lyons
-- Tadodaho Sid Hill
-- Joe Heath
-- Ciarrai Eaton
+- [Tina Thomas](/bios/tina-thomas/)
+- [Sarah Shute](/bios/sarah-shute/)
+- [Jake Edwards](/bios/jake-edwards/)
+- [Rex Lyons](/bios/rex-lyons/)
+- [Tadodaho Sidney Hill](/bios/sidney-hill/)
+- [Joseph J. Heath](/bios/joseph-j-heath/)
+- [Richard W. Hill, Sr.](/bios/richard-hill/)
+- [Ciarrai Eaton](/bios/ciarrai-eaton/)
 
 ## The American Indian Law Alliance
 
 The [American Indian Law Alliance](https://aila.ngo) publishes Healing the Sacred. The podcast sits alongside [LakeBack](https://lakeback.org), the campaign to return Maple Bay on Onondaga Lake.
 
-[Subscribe to hear the first episode when it is released.](/subscribe/)
+All eleven episodes are out now. [Listen to the episodes](/episodes/) or [subscribe in your podcast app](/subscribe/).

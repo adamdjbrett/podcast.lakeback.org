@@ -1,7 +1,9 @@
 ---
 title: "The Eagles Return to Onondaga Lake, Part 1"
 description: "Tina Thomas and Sarah Shute tell Patricia Nolan Vogt how bald eagles built the first recorded nest on Onondaga Lake in 2022, and what mercury did to the lake."
-date: 2026-11-14
+date: 2026-11-22
+duration: "29:38"
+bytes: 21397365
 host: "Patricia Nolan Vogt"
 guests: ["Tina Thomas", "Sarah Shute"]
 tags: ["onondaga-lake", "eagles", "contamination", "environment", "peacemaker"]

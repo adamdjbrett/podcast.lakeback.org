@@ -18,7 +18,8 @@
   },
   "episodes": {
     "heading": "Episodes",
-    "emptyState": "Episodes are in production and none are published yet. Subscribe, and the first episode will reach you when it is released."  },
+    "emptyState": "No episodes are available right now. Subscribe to the feed to hear them in your podcast app."
+  },
   "related": {
     "heading": "Related reading and listening",
     "items": [
@@ -44,7 +45,7 @@
   },
   "subscribe": {
     "heading": "Subscribe to the podcast",
-    "sentence": "Subscribe to receive each episode when it is released.",
+    "sentence": "All eleven episodes are out now. Follow the series in your podcast app.",
     "featured": ["apple-podcasts", "spotify", "overcast", "podcast-addict", "listen-notes"],
     "more": "All {n} apps, plus the RSS feed"
   },

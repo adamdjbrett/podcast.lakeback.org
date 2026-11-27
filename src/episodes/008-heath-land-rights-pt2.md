@@ -1,7 +1,9 @@
 ---
 title: "Joseph J. Heath on Onondaga Land Rights and the Lake, Part 2"
 description: "Joseph J. Heath on Onondaga County's 2011 resolution to return lake land, Maple Bay, the Honeywell Superfund cleanup, and the mercury and sewage still there."
-date: 2026-11-14
+date: 2026-11-22
+duration: "23:38"
+bytes: 17064477
 host: "Betty Lyons Hill"
 guests: ["Joseph J. Heath"]
 tags: ["onondaga-lake", "contamination", "environment", "water", "land-rights", "onondaga-nation"]

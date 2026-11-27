@@ -45,13 +45,13 @@ Layouts and templates read front matter keys; wherever a value repeats or follow
 | Folder | Set by its `*.11tydata.js` | Left to each file |
 |---|---|---|
 | `src/pages/` | `layout: page`, `permalink: /<file-name>/` | `title`, `description` (`index.njk` overrides both defaults) |
-| `src/episodes/` | `layout`, `permalink`, `episode` (from the `###-` prefix), `draft`, `audio` (from `url`), `transcript` (the matching HTML transcript from `src/_data/transcripts.js`) | `title`, `description`, `date`, `host`, `guests`, `tags`, `url`, `published` |
+| `src/episodes/` | `layout`, `permalink`, `episode` (from the `###-` prefix), `draft`, `audio` (from `url`), `transcript` (the matching HTML transcript from `src/_data/transcripts.js`) | `title`, `description`, `date` (the Buzzsprout release date), `duration` (`MM:SS`) and `bytes` (the MP3 size), both from the Buzzsprout feed's `itunes:duration` and enclosure `length`, `host`, `guests`, `tags`, `url`, `published` |
 | `src/bios/` | `layout`, `permalink`, `title`, `description`, `avatar` (when `src/assets/images/bios/<file-name>.webp` exists) | `name`, `bio`, `links`; `avatar` only to point somewhere else |
 | `src/common/` | `eleventyExcludeFromCollections: true` | `permalink` |
 
 Site-wide defaults (site name, description, Open Graph image) come from `src/_data/meta.js`; `image` in front matter overrides the Open Graph image for one page.
 
-Apple Podcasts, Spotify and YouTube links appear once their `url` is filled in under `podcast.directories` in `meta.js`.
+Directory links (Apple Podcasts, Spotify, YouTube and the rest) live under `podcast.directories` in `meta.js`; add one there once Buzzsprout shows the show as listed.
 
 ## What comes from where
 

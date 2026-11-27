@@ -1,7 +1,9 @@
 ---
 title: "The Eagles Return to Onondaga Lake, Part 2"
 description: "Tina Thomas and Sarah Shute on the eagle atop the tree in the Great Law of Peace, the Ganohé:nio, and what could grow at Maple Bay if it were returned."
-date: 2026-11-14
+date: 2026-11-22
+duration: "18:28"
+bytes: 13353954
 host: "Patricia Nolan Vogt"
 guests: ["Tina Thomas", "Sarah Shute"]
 tags: ["onondaga-lake", "eagles", "thanksgiving-address", "land-rights", "environment"]

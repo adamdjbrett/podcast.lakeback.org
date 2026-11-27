@@ -26,7 +26,7 @@ Adam DJ Brett and Betty Hill (Lyons)
 - [Episode 6: Tadodaho Sidney Hill on the Peacemaker and Onondaga Lake](#episode-6-tadodaho-sidney-hill-on-the-peacemaker-and-onondaga-lake)
 - [Episode 7: Joseph J. Heath on Onondaga Land Rights and the Lake, Part 1](#episode-7-joseph-j-heath-on-onondaga-land-rights-and-the-lake-part-1)
 - [Episode 8: Joseph J. Heath on Onondaga Land Rights and the Lake, Part 2](#episode-8-joseph-j-heath-on-onondaga-land-rights-and-the-lake-part-2)
-- [Episode 9: Richard Hill on the Great Law, Wampum, and the Two Row](#episode-9-richard-hill-on-the-great-law-wampum-and-the-two-row)
+- [Episode 9: Richard W. Hill, Sr. on the Great Law, Wampum, and the Two Row Wampum Treaty](#episode-9-richard-w-hill-sr-on-the-great-law-wampum-and-the-two-row-wampum-treaty)
 - [Episode 10: Matilda Joslyn Gage and the Haudenosaunee, Part 1](#episode-10-matilda-joslyn-gage-and-the-haudenosaunee-part-1)
 - [Episode 11: Matilda Joslyn Gage and the Haudenosaunee, Part 2](#episode-11-matilda-joslyn-gage-and-the-haudenosaunee-part-2)
 - [About This Curriculum Guide](#about-this-curriculum-guide)
@@ -47,10 +47,10 @@ This curriculum guide is for instructors in religious studies, Indigenous studie
 
 ### Episodes and Transcripts
 
-11 episodes. Run times: TBD.
-Total series run time: TBD.
+11 episodes, released November 22, 2026. Run times: 18:28 to 50:47.
+Total series run time: 5 hours, 43 minutes.
 
-The series has not been released yet. When it is, episodes and transcripts will be at [podcast.lakeback.org/episodes](https://podcast.lakeback.org/episodes/). Each episode page will link a transcript (PDF) and give a citation for the episode in Chicago, RIS, CSL JSON, and BibTeX formats.
+Episodes and transcripts are at [podcast.lakeback.org/episodes](https://podcast.lakeback.org/episodes/). Each episode page links a full transcript, readable on the web or as a PDF, and gives a citation for the episode in Chicago, RIS, CSL JSON, and BibTeX formats.
 
 ### Themes
 
@@ -85,7 +85,7 @@ Whose land do you teach on? The speakers in this series are sharing what they ha
 - **De Ho Wih Da Dis, Rex Lyons** (Onondaga Nation, Eel Clan), lacrosse player, coach and administrator, and musician. Episodes 4 and 5.
 - **Tadodaho Sidney Hill**, Tadodaho of the Haudenosaunee Confederacy and a citizen of the Onondaga Nation. Episode 6.
 - **Joseph J. Heath**, full-time General Counsel for the Onondaga Nation since 1983. Episodes 7 and 8.
-- **Richard W. Hill Sr.** (Tuscarora Nation, Beaver Clan), artist, historian, and educator. Episode 9.
+- **Richard W. Hill, Sr.** (Tuscarora Nation, Beaver Clan), artist, historian, and educator. Episode 9.
 - **Ciarrai Eaton**, Executive Director of the Matilda Joslyn Gage Foundation. Episodes 10 and 11.
 
 ### Key Questions
@@ -132,7 +132,7 @@ Each episode's own list puts sources from the Onondaga Nation and from Haudenosa
 
 ## Episode 1: The Eagles Return to Onondaga Lake, Part 1
 
-Run time: TBD
+Run time: 29:38
 
 Host: Patricia Nolan Vogt
 
@@ -170,7 +170,7 @@ Then the eagles. During the 2020 COVID closure the two listened each morning to 
 
 ## Episode 2: The Eagles Return to Onondaga Lake, Part 2
 
-Run time: TBD
+Run time: 18:28
 
 Host: Patricia Nolan Vogt
 
@@ -208,7 +208,7 @@ Vogt then asks what could grow at Maple Bay, a stretch of shore on the northwest
 
 ## Episode 3: Jake Edwards on Onondaga Lake and the Ganohé:nio
 
-Run time: TBD
+Run time: 33:20
 
 Host: Betty Hill (Lyons)
 
@@ -246,7 +246,7 @@ Edwards then ties the taking of Onondaga land to the Doctrine of Discovery, whic
 
 ## Episode 4: Rex Lyons on Lacrosse and the Haudenosaunee Nationals, Part 1
 
-Run time: TBD
+Run time: 31:04
 
 Host: Betty Hill (Lyons)
 
@@ -286,7 +286,7 @@ The last third tells how the Haudenosaunee Nationals, then called the Iroquois N
 
 ## Episode 5: Rex Lyons on Lacrosse and the Haudenosaunee Nationals, Part 2
 
-Run time: TBD
+Run time: 30:28
 
 Host: Betty Hill (Lyons)
 
@@ -326,7 +326,7 @@ Asked near the end about the campaign to regain part of Onondaga Lake, which cal
 
 ## Episode 6: Tadodaho Sidney Hill on the Peacemaker and Onondaga Lake
 
-Run time: TBD
+Run time: 31:57
 
 Host: Betty Hill (Lyons)
 
@@ -366,7 +366,7 @@ He then turns to the lake today. He remembers its smell at the State Fair, where
 
 ## Episode 7: Joseph J. Heath on Onondaga Land Rights and the Lake, Part 1
 
-Run time: TBD
+Run time: 29:41
 
 Host: Betty Hill (Lyons)
 
@@ -408,7 +408,7 @@ On April 14, 2014, the Nation petitioned the Inter-American Commission on Human 
 
 ## Episode 8: Joseph J. Heath on Onondaga Land Rights and the Lake, Part 2
 
-Run time: TBD
+Run time: 23:38
 
 Host: Betty Hill (Lyons)
 
@@ -444,19 +444,19 @@ Heath says mercury was dumped into the lake daily from 1946 to 1970. In his acco
 
 ---
 
-## Episode 9: Richard Hill on the Great Law, Wampum, and the Two Row
+## Episode 9: Richard W. Hill, Sr. on the Great Law, Wampum, and the Two Row Wampum Treaty
 
-Run time: TBD
+Run time: 50:47
 
 Host: Adam DJ Brett
 
-Guest: Richard W. Hill Sr. (Tuscarora Nation, Beaver Clan)
+Guest: Richard W. Hill, Sr. (Tuscarora Nation, Beaver Clan)
 
 Key Topics: the Great Law of Peace, the Peacemaker and Onondaga Lake, wampum recovery, treaty minutes, the Two Row Wampum, the Covenant Chain, land return as relationship
 
 ### Description
 
-Adam DJ Brett, filling in for Betty Hill (Lyons), talks with Richard W. Hill Sr., a Tuscarora artist, historian and educator who says he does not like to call himself a knowledge keeper. Hill recalls traveling to Onondaga in the early 1970s to hear the Great Law recited, then sitting by the polluted lake and wondering why the Peacemaker had to cross that water to reach Tadodaho. The Great Law, Hill says, is "a way of thinking," a mirror for reflecting on one's own conduct, practiced through relationships.
+Adam DJ Brett, filling in for Betty Hill (Lyons), talks with Richard W. Hill, Sr., a Tuscarora artist, historian and educator who says he does not like to call himself a knowledge keeper. Hill recalls traveling to Onondaga in the early 1970s to hear the Great Law recited, then sitting by the polluted lake and wondering why the Peacemaker had to cross that water to reach Tadodaho. The Great Law, Hill says, is "a way of thinking," a mirror for reflecting on one's own conduct, practiced through relationships.
 
 Hill describes wampum, shell-bead strings and belts into which, he says, the ancestors put "their words, their thoughts, their hopes." He has helped recover wampum from universities and museums. Treaty meaning, he argues, lies in the negotiation minutes, not only in the parchment signed at the end.
 
@@ -486,7 +486,7 @@ He then tells the Two Row, cautioning that "half of this is metaphorical, and ha
 
 ## Episode 10: Matilda Joslyn Gage and the Haudenosaunee, Part 1
 
-Run time: TBD
+Run time: 31:37
 
 Host: Patricia Nolan Vogt
 
@@ -524,7 +524,7 @@ Eaton separates matriarchy, pictured as a circle with children, elders, the sick
 
 ## Episode 11: Matilda Joslyn Gage and the Haudenosaunee, Part 2
 
-Run time: TBD
+Run time: 32:56
 
 Host: Patricia Nolan Vogt
 

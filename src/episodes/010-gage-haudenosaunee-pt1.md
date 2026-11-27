@@ -1,7 +1,9 @@
 ---
 title: "Matilda Joslyn Gage and the Haudenosaunee, Part 1"
 description: "Ciarrai Eaton of the Matilda Joslyn Gage Foundation explains coverture, matrilineal clans, and the equality Gage saw among Haudenosaunee women."
-date: 2026-11-14
+date: 2026-11-22
+duration: "31:37"
+bytes: 22816887
 host: "Patricia Nolan Vogt"
 guests: ["Ciarrai Eaton"]
 tags: ["womens-rights", "matriarchy", "haudenosaunee", "oral-history", "history", "law"]

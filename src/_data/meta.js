@@ -13,20 +13,42 @@ export const author = {
   name: 'American Indian Law Alliance',
   website: 'https://aila.ngo',
   email: 'media@aila.ngo',
-  description: 'An NGO in consultative status with the United Nations Economic & Social Council (ECOSOC)', // as on aila.ngo
-  // AILA's official profiles, as linked (rel="me") in the aila.ngo footer. Add one here only once aila.ngo links it.
-  social: [
-    'https://www.instagram.com/americanindianlawalliance',
-    'https://www.facebook.com/americanindianlawalliance',
-    'https://bsky.app/profile/aila.social',
-    'https://www.linkedin.com/company/american-indian-law-alliance',
-    'https://x.com/ailanyc',
-    'https://www.youtube.com/@aila-ngo'
-  ]
+  // AILA's Organization node, shared @id with aila.ngo, aila.social and lakeback.org: keep it identical to
+  // aila.ngo's (src/_includes/schemas/Organization.njk and src/_data/organization.yaml there).
+  organization: {
+    "name": "American Indian Law Alliance",
+    "alternateName": "AILA",
+    "description": "An NGO in consultative status with the United Nations Economic & Social Council (ECOSOC)",
+    "url": "https://aila.ngo/",
+    "logo": "https://aila.ngo/icon-512x512.png",
+    "email": "aila@aila.ngo",
+    "address": {
+      "@type": "PostalAddress",
+      "postOfficeBoxNumber": "336",
+      "addressLocality": "DeWitt",
+      "addressRegion": "NY",
+      "postalCode": "13214-9211",
+      "addressCountry": "US"
+    },
+    "sameAs": [
+      "https://aila.social/",
+      "https://lakeback.org/",
+      "https://podcast.lakeback.org/",
+      "https://www.youtube.com/playlist?list=PLE98CAQgldhg",
+      "https://doctrineofdiscovery.org/",
+      "https://podcast.doctrineofdiscovery.org/",
+      "https://www.sullivanclinton.com/",
+      "https://www.instagram.com/americanindianlawalliance",
+      "https://www.facebook.com/americanindianlawalliance",
+      "https://bsky.app/profile/aila.social",
+      "https://www.linkedin.com/company/american-indian-law-alliance",
+      "https://x.com/ailanyc",
+      "https://www.youtube.com/@aila-ngo"
+    ]
+  }
 };
 export const links = {
-  lakeback: 'https://lakeback.org',
-  ailaSocial: 'https://aila.social'
+  lakeback: 'https://lakeback.org'
 };
 // The licence for the podcast's content (the code's licence is in LICENSE). The footer reads this.
 export const license = {
@@ -120,7 +142,7 @@ export const citations = {
 };
 export const themeColor = '#0f3d45'; // web app manifest
 
-/** "Richard W. Hill Sr." -> "Hill, Richard W., Sr.": the inverted form DC and Zotero expect for personal names. */
+/** "Richard W. Hill, Sr." -> "Hill, Richard W., Sr.": the inverted form DC and Zotero expect for personal names. */
 export const sortName = name => {
   const [, given, family, suffix] = String(name).trim().match(/^(.+?)\s+(\S+?)(?:,?\s+(Jr\.|Sr\.|II|III|IV))?$/) || [];
   return family ? [family, given, suffix].filter(Boolean).join(', ') : name;
@@ -210,10 +232,7 @@ export const jsonLd = (m, ep, episodes = []) => {
       datePublished: dates[0], startDate: dates[0], endDate: dates.at(-1),
       hasPart: parts.length ? parts : undefined
     },
-    {
-      '@type': 'Organization', '@id': ids.org, name: m.author.name, url: m.author.website, email: m.author.email,
-      description: m.author.description, sameAs: [m.author.website, m.links.ailaSocial, m.links.lakeback, m.productionUrl, m.podcast.buzzsprout.feed, ...m.author.social]
-    }
+    {'@type': 'Organization', '@id': ids.org, ...m.author.organization}
   ];
   if (ep) {
     const page = m.url + ep.url;

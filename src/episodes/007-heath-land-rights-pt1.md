@@ -1,7 +1,9 @@
 ---
 title: "Joseph J. Heath on Onondaga Land Rights and the Lake, Part 1"
 description: "Onondaga Nation general counsel Joseph J. Heath traces his path from Attica to the 2005 land rights action, its dismissal after Sherrill, and the OAS petition."
-date: 2026-11-14
+date: 2026-11-22
+duration: "29:41"
+bytes: 21421803
 host: "Betty Lyons Hill"
 guests: ["Joseph J. Heath"]
 tags: ["onondaga-nation", "land-rights", "sovereignty", "treaties", "law", "history"]

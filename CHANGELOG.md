@@ -4,6 +4,17 @@ Notable changes to the Healing the Sacred site. The format follows [Keep a Chang
 
 ## [Unreleased]
 
+### Fixed
+
+- Post-launch copy: the About page, home subscribe band and curriculum guide (web and PDF) no longer say the series is unreleased. The About page lists all eight guests with bio links.
+- Episode dates match the Buzzsprout release (November 22, 2026, not November 14), and every episode has a `duration`, so episode pages, `itunes:duration` and citations show the length. The curriculum guide gives each run time and the series total.
+- Episode enclosures carry each MP3's byte size from the Buzzsprout feed (`bytes` in front matter) instead of `length="0"`.
+- Episode 9 is titled "Richard W. Hill, Sr. on the Great Law, Wampum, and the Two Row Wampum Treaty", as on Buzzsprout, and he is named Richard W. Hill, Sr. throughout the site, transcript and curriculum guide.
+
+## [2.1.0] - 2026-11-22
+
+Launch: all eleven episodes released on Buzzsprout.
+
 ### Added
 
 - Episodes are published by default: `src/episodes/episodes.11tydata.js` sets `published: true`, and front matter `published: false` keeps an episode out of production (pages, sitemap, feeds).
@@ -34,7 +45,7 @@ Notable changes to the Healing the Sacred site. The format follows [Keep a Chang
 ### Changed
 
 - The homepage Episodes header always links to `/episodes/`; the "In production" badge is gone.
-- The homepage subscribe band lists Apple Podcasts, Spotify, Overcast, Podcast Addict and Listen Notes, then an "All 14 apps, plus the RSS feed →" button to `/subscribe/` (`home.json` `subscribe.featured` and `subscribe.more`; `directory-rows.njk` takes `onlyDirectories`). `/subscribe/` still lists every app and the feed.
+- The homepage subscribe band lists Apple Podcasts, Spotify, Overcast, Podcast Addict and Listen Notes, then an "All 15 apps, plus the RSS feed →" button to `/subscribe/` (`home.json` `subscribe.featured` and `subscribe.more`; `directory-rows.njk` takes `onlyDirectories`). `/subscribe/` still lists every app and the feed.
 - The music credit reads "Chris Thomas" and links to his bio on every episode page and in the colophon.
 - JSON-LD: the AILA Organization gains its ECOSOC `description`, and aila.social and AILA's YouTube channel join its `sameAs` (`meta.links.ailaSocial`, `meta.author.social`).
 - CSS is bundled, prefixed and minified by esbuild (`src/_config/events/build-css.js`), replacing PostCSS, Tailwind and cssnano. `global.css` lists every stylesheet explicitly in cascade-layer order; Tailwind's `screen()` media queries are written as pixel widths (640, 662, 1000px).

@@ -29,7 +29,7 @@ description: The producers, editors, artist, writers, hosts, and guests behind H
 - [Rex Lyons](/bios/rex-lyons/)
 - [Tadodaho Sidney Hill](/bios/sidney-hill/)
 - [Joseph J. Heath](/bios/joseph-j-heath/)
-- [Richard W. Hill Sr.](/bios/richard-hill/)
+- [Richard W. Hill, Sr.](/bios/richard-hill/)
 - [Ciarrai Eaton](/bios/ciarrai-eaton/)
 
 ## Land Acknowledgement

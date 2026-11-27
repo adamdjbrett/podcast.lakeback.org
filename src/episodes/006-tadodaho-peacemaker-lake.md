@@ -1,7 +1,9 @@
 ---
 title: "Tadodaho Sidney Hill on the Peacemaker and Onondaga Lake"
 description: "Tadodaho Sidney Hill explains his title, how the Peacemaker brought the Great Law of Peace to the five nations, and the 2005 Onondaga land rights action."
-date: 2026-11-14
+date: 2026-11-22
+duration: "31:57"
+bytes: 23054790
 host: "Betty Lyons Hill"
 guests: ["Tadodaho Sidney Hill"]
 tags: ["peacemaker", "great-law-of-peace", "onondaga-lake", "contamination", "land-rights", "water"]

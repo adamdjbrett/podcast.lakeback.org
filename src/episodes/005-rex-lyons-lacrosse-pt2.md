@@ -1,7 +1,9 @@
 ---
 title: "Rex Lyons on Lacrosse and the Haudenosaunee Nationals, Part 2"
 description: "Rex Lyons recalls a clan mother's lesson, hearing the Haudenosaunee anthem in Perth, and pressing the IOC president in Switzerland for a place in the Olympics."
-date: 2026-11-14
+date: 2026-11-22
+duration: "30:28"
+bytes: 21989437
 host: "Betty Lyons Hill"
 guests: ["Rex Lyons"]
 tags: ["lacrosse", "onondaga-lake", "sovereignty", "womens-rights", "matriarchy", "peacemaker"]

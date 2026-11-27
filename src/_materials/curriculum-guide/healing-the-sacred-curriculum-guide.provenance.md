@@ -90,3 +90,7 @@ All in `provenance/`:
 - `healing-sacred-student-read-ep*.md`: the two student reports.
 - `healing-sacred-revised-ep*-changes.md`: the revisers' change logs.
 - `link-check-2026-11-15.txt`: the status of every link.
+
+## Update, November 27, 2026
+
+The series was released on November 22, 2026, and podcast.lakeback.org is live, so `https://podcast.lakeback.org/episodes/` now resolves. Run times were filled in from the Buzzsprout feed. The series-details paragraph that said the series had not been released was rewritten. Episode 9 now carries its released title, and its guest is named Richard W. Hill, Sr. The notes above are left as they were on November 15.

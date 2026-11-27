@@ -1,7 +1,9 @@
 ---
 title: "Matilda Joslyn Gage and the Haudenosaunee, Part 2"
 description: "Ciarrai Eaton on Gage's adoption into the Mohawk Wolf Clan, her 1890 break with Anthony and Stanton, Jigonsaseh, and the fight for Maple Bay."
-date: 2026-11-14
+date: 2026-11-22
+duration: "32:56"
+bytes: 23771892
 host: "Patricia Nolan Vogt"
 guests: ["Ciarrai Eaton"]
 tags: ["womens-rights", "matriarchy", "haudenosaunee", "history", "treaties", "onondaga-lake"]
